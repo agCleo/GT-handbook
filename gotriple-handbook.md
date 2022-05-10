@@ -40,7 +40,7 @@ The following two sections specify the technical set-up enabling GoTriple to acc
 ### Technical set-up
 GoTriple collects data from the content providers by using the Open Archive Initiative - Protocol for Metadata Harvesting ([OAI-PMH](http://www.openarchives.org/OAI/openarchivesprotocol.html)). Metadata compliant with the protocol can also be collected as a dump, without an OAI repository. This solution however hinders automated data acquisition and updates. Using a repository harvestable through OAI-PMH should therefore be preferred.
    
-The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. The metadata has to be represented according to the [simple DublinCore (DC)](https://www.dublincore.org/specifications/dublin-core/dces/) standard at least, or in a more expressive format, like for instance [qualified DublinCore (QDC)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata.   
+The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. The metadata has to be represented according to the [simple DublinCore (DC)](https://www.dublincore.org/specifications/dublin-core/dces/) standard at least, or in a more expressive format, like for instance [qualified DublinCore (QDC)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). DC and QDC can be expressed in XML, HTML, or XHTML files. The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata.   
 The OAI repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).
 
 ### GoTriple data model
@@ -87,7 +87,7 @@ The TRIPLE data model also contains a few other elements for documents that are 
 
 ## Best practices for contents' visibility
 ### Metadata quality
-While only three metadata elements are technically mandatory on GoTriple, richer metadata improve the processing by the information systems and threfore increases the visibility of the contents. Some of the metadata elements require however more accurate management in order to fully exploit the potentialities of the DublinCore standard. We list below a few hints able to improve the metadata quality in the context of GoTriple, but also in the context of other aggregators, like OpenAIRE, DOAJ, DOAB or BASE.
+While only three metadata elements are technically mandatory on GoTriple, richer metadata improve the processing by the information systems and therefore increases the visibility of the contents. Some of the metadata elements require however more accurate management in order to fully exploit the potentialities of the DublinCore standard. We list below a few hints able to improve the metadata quality in the context of GoTriple, but also in the context of other aggregators, like OpenAIRE, DOAJ, DOAB or BASE.
 
 | Priority | Description | Comments | 
 | :---     |    :----:   | :---     | 
@@ -95,21 +95,21 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Mandatory | Identifier of the resource| Can contain one or many identifiers of different types. Identifiers are non semantic string of character uniquely identifying a resource. They should belong to a well-known identification system (e.g. ISBN, DOI, handle.net, etc.). <br/>In the digital context, the more important identifier is the Persistent Identifier (PID), which ensures the persistent identification of the resource throughout the various digital locations. Persistent identifiers include among others: DOI from Datacite or Crossref, handles from handle.net.<br/>Identifiers should be provided as HTTP links and can be specified through dedicated encoding schemes accepted by the DC standard (e.g. URI, DOI, ISBN). | 
 | Mandatory | Title of the resource |  |
 | Recommended | Abstract  | The `dcterms:description` can be more extended than the `dcterms:abstract`, or contain an abstract. On GoTriple, abstracts are used for the automated classification. |
-| Recommended | Access rights to the resource | Can contain free text information about the possible access to the resource. As recommended also by OpenAIRE, it is possible to specify the access type in a normalized way through the [COAR access rights types](https://vocabularies.coar-repositories.org/access_rights/): embargoed access; metadata only access; open access; restricted access. Access information can be complemented with licensing information |
-| Recommended | Date of publication or creation  | dcterms:date, dc:date, dcterms:issued, dcterms:created, dcterms:available | schema:datePublished |
-| Recommended | Keywords  | dcterms:subject, dc:subject | schema:keywords |
-| Recommended | Language of the resource | dcterms:language, dc:language | schema:inLanguage | 
-| Recommended | License | dcterms:rights, dc:rights | schema:license |
-| Recommended | Publisher of the resource | dcterms:publisher, dc:publisher | schema:publisher |
-| Recommended | URL of the landing page | dcterms:identifier  dc:identifier | schema:mainEntityOfPage |
-| Recommended | URL of the resource | dcterms:identifier  dc:identifier | schema:url |
-| Recommended | URL of the source (e.g. URL of a publishing platform) | dcterms:source, dc:source | schema:isBasedOnURL |
-| Optional | Type of the resource | dcterms:type, dc:type | schema:additionalType |
-| Optional | Contributor to the resource’s creation | dcterms:contributor, dc:contributor | schema:contributor |
-| Optional | Format of the resource | dcterms:format, dc:format| schema:encodingFormat |
-| Optional | Information on the source (e.g. journal issue) | dcterms:relation, dc:relation | schema:mentions |
-| Optional | Temporal coverage of the resource | dc:coverage, dcterms:coverage | schema:temporalCoverage |
-| Optional | Spatial coverage of the resource | dcterms:spatial | schema:spatialCoverage |
+| Recommended | Access rights to the resource | Can contain free text information about the possible access to the resource. As recommended also by OpenAIRE, it is possible to specify the access type in a normalized way through the [COAR access rights types](https://vocabularies.coar-repositories.org/access_rights/): embargoed access; metadata only access; open access; restricted access. Access information can be complemented with licensing information. |
+| Recommended | Date of publication or creation  |  |
+| Recommended | Keywords  | Can contain one or many keywords describing the content of the resource. In DC, the keywords language can be specified using an `xml:lang` attribute. Best practices is to use the [ISO 639-3](https://iso639-3.sil.org/) three-letters code to identify the language |
+| Recommended | Language of the resource |  | 
+| Recommended | License |  |
+| Recommended | Publisher of the resource |  |
+| Recommended | URL of the landing page |  |
+| Recommended | URL of the resource |  |
+| Recommended | URL of the source (e.g. URL of a publishing platform) | L |
+| Optional | Type of the resource |  |
+| Optional | Contributor to the resource’s creation |  |
+| Optional | Format of the resource |  |
+| Optional | Information on the source (e.g. journal issue) |  |
+| Optional | Temporal coverage of the resource |  |
+| Optional | Spatial coverage of the resource |  |
 
 ### FAIR principles
 ### Aggregators 
