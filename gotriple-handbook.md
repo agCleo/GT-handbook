@@ -46,17 +46,18 @@ The OAI repository can be set up by the content provider with little development
 ### GoTriple data model
 In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects. The metadata of the documents need to be compliant with DublinCore. Thanks to various mappings between metadata standards, the TRIPLE data model can handle other major standards well-spread in the SSH community, like OpenAIRE metadata format or Europeana Data Metadata (EDM) format.
 
-Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding tag elements in simple DC and QDC, and their expression in the TRIPLE data model.
-
+Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding tag elements in simple DC and QDC, and their expression in the TRIPLE data model.  
+   
+   
 | Priority | Description | DublinCore | Triple data model | 
 | :---     |    :----:   | :---:      | :----: | 
 | Mandatory | Creator of the resource| dcterms:creator, dc:creator| schema:author |
 | Mandatory | Identifier of the resource| dcterms:identifier, dc:identifier | schema:identifier |
 | Mandatory | Title of the resource| dcterms:title, dc:title| schema:headline |
 | Recommended | Abstract  | dcterms:description, dc:description, dcterms:abstract | schema:abstract |
-| Recommended | Access rights to the resource | dcterms:accessRights, dcterms:conditions, dc:conditions |schema:conditionsOfAccess |
+| Recommended | Access rights to the resource | dcterms:accessRights, dcterms:conditions??, dc:conditions?? |schema:conditionsOfAccess |
 | Recommended | Date of publication or creation  | dcterms:date, dc:date, dcterms:issued, dcterms:created, dcterms:available | schema:datePublished |
-| Recommended |  Keywords  | dcterms:subject, dc:subject | schema:keywords |
+| Recommended | Keywords  | dcterms:subject, dc:subject | schema:keywords |
 | Recommended | Language of the resource | dcterms:language, dc:language | schema:inLanguage | 
 | Recommended | License | dcterms:rights, dc:rights | schema:license |
 | Recommended | Publisher of the resource | dcterms:publisher, dc:publisher | schema:publisher |
@@ -84,10 +85,32 @@ The elements of the TRIPLE data model in the schema.org ontology are reported on
 Some of the DC and QDC elements are processed by the platform. This is especially the case for "URL of the landing page" and "URL of the resource", which are automatically determined from the content of `dcterms:identifier` or `dc:identifier`.
 The TRIPLE data model also contains a few other elements for documents that are created through the analysis of the metadata files.
 
-
-
 ## Best practices for contents' visibility
-### Rich metadata
+### Metadata quality
+While only three metadata elements are technically mandatory on GoTriple, richer metadata improve the processing by the information systems and threfore increases the visibility of the contents. Some of the metadata elements require however more accurate management in order to fully exploit the potentialities of the DublinCore standard. We list below a few hints able to improve the metadata quality in the context of GoTriple, but also in the context of other aggregators, like OpenAIRE, DOAJ, DOAB or BASE.
+
+| Priority | Description | Comments | 
+| :---     |    :----:   | :---     | 
+| Mandatory | Creator of the resource| Can contain one or many creators of the resource and can be individuals or organizations |
+| Mandatory | Identifier of the resource| Can contain one or many identifiers of different types. Identifiers are non semantic string of character uniquely identifying a resource. They should belong to a well-known identification system (e.g. ISBN, DOI, handle.net, etc.). <br/>In the digital context, the more important identifier is the Persistent Identifier (PID), which ensures the persistent identification of the resource throughout the various digital locations. Persistent identifiers include among others: DOI from Datacite or Crossref, handles from handle.net.<br/>Identifiers should be provided as HTTP links and can be specified through dedicated encoding schemes accepted by the DC standard (e.g. URI, DOI, ISBN). | 
+| Mandatory | Title of the resource |  |
+| Recommended | Abstract  | The `dcterms:description` can be more extended than the `dcterms:abstract`, or contain an abstract. On GoTriple, abstracts are used for the automated classification. |
+| Recommended | Access rights to the resource | Can contain free text information about the possible access to the resource. As recommended also by OpenAIRE, it is possible to specify the access type in a normalized way through the [COAR access rights types](https://vocabularies.coar-repositories.org/access_rights/): embargoed access; metadata only access; open access; restricted access. Access information can be complemented with licensing information |
+| Recommended | Date of publication or creation  | dcterms:date, dc:date, dcterms:issued, dcterms:created, dcterms:available | schema:datePublished |
+| Recommended | Keywords  | dcterms:subject, dc:subject | schema:keywords |
+| Recommended | Language of the resource | dcterms:language, dc:language | schema:inLanguage | 
+| Recommended | License | dcterms:rights, dc:rights | schema:license |
+| Recommended | Publisher of the resource | dcterms:publisher, dc:publisher | schema:publisher |
+| Recommended | URL of the landing page | dcterms:identifier  dc:identifier | schema:mainEntityOfPage |
+| Recommended | URL of the resource | dcterms:identifier  dc:identifier | schema:url |
+| Recommended | URL of the source (e.g. URL of a publishing platform) | dcterms:source, dc:source | schema:isBasedOnURL |
+| Optional | Type of the resource | dcterms:type, dc:type | schema:additionalType |
+| Optional | Contributor to the resource’s creation | dcterms:contributor, dc:contributor | schema:contributor |
+| Optional | Format of the resource | dcterms:format, dc:format| schema:encodingFormat |
+| Optional | Information on the source (e.g. journal issue) | dcterms:relation, dc:relation | schema:mentions |
+| Optional | Temporal coverage of the resource | dc:coverage, dcterms:coverage | schema:temporalCoverage |
+| Optional | Spatial coverage of the resource | dcterms:spatial | schema:spatialCoverage |
+
 ### FAIR principles
 ### Aggregators 
 
