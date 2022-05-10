@@ -1,3 +1,7 @@
+
+***WORK IN PROGRESS***
+-----
+
 # GoTriple Content Providers Handbook
 
 ## Purpose of this document
