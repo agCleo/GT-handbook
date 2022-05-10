@@ -72,7 +72,7 @@ Below, we describe the current TRIPLE data model for documents, specifying the l
 The *mandatory* elements are necessary for the platform to process the metadata. The *recommended* elements increase both the findability of the contents and the quality of the automated processes run by the platform. The *optional* elements can provide additional information useful for the users.
 
 *DublinCore elements*.  
-The simple DC elements are introduced by the "dc" namespace, the qualified DC elements are introduced by the "dcterms" namespace. While it is still technically possible to use simple DC, it is preferable to use QDC, which allows for a more detailed description of the resource.   
+The simple DC elements are introduced by the `dc` namespace, the qualified DC elements are introduced by the `dcterms` namespace. While it is still technically possible to use simple DC, it is preferable to use QDC, which allows for a more detailed description of the resource.   
 In some cases, it is possible to use one or many DC elements to describe an aspect of the resource: the date of the resource can be described through `dcterms:date` or through the more accurate  `dcterms:created` and  `dcterms:available`.
 
 *TRIPLE data model*.  
