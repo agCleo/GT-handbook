@@ -97,7 +97,7 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Recommended | Abstract  | The `dcterms:description` can be more extended than the `dcterms:abstract`, or contain an abstract. On GoTriple, abstracts are used for the automated classification. |
 | Recommended | Access rights to the resource | Can contain free text information about the possible access to the resource. As recommended also by OpenAIRE, it is possible to specify the access type in a normalized way through the [COAR access rights types](https://vocabularies.coar-repositories.org/access_rights/): embargoed access; metadata only access; open access; restricted access. Access information can be complemented with licensing information. |
 | Recommended | Date of publication or creation  |  |
-| Recommended | Keywords  | Can contain one or many keywords describing the content of the resource. In DC, the keywords language can be specified using an `xml:lang` attribute. Best practices is to use the [ISO 639-3](https://iso639-3.sil.org/) three-letters code to identify the language |
+| Recommended | Keywords  | Can contain one or many keywords describing the content of the resource. In DC, the keywords language can be specified using an `xml:lang` attribute. Best practice is to use the [ISO 639-3](https://iso639-3.sil.org/) three-letters code to identify the language |
 | Recommended | Language of the resource |  | 
 | Recommended | License |  |
 | Recommended | Publisher of the resource |  |
