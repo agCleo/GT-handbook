@@ -4,7 +4,7 @@
 
 # GoTriple Content Providers Handbook
 
-## Purpose of this document
+## Purpose of this document {#purpose}
 [GoTriple](https://www.gotriple.eu/) is a discovery service for the Social Sciences and Humanities community. It is one of the services of the European Research Infrastructure [OPERAS](https://www.operas-eu.org/).   
 The GoTriple platform allows to search through publications, datasets, researchers' profiles, and research projects. Publications and datasets metadata are collected from both content aggregators and content providers (see [Glossary](#glossary)).
 
