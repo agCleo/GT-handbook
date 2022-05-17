@@ -104,9 +104,9 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Recommended | URL of the landing page | The URL of the landing page can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI scheme.  |
 | Recommended | URL of the resource | Like the URL of the landing page, the URL of the resource itself can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI scheme. In GoTriple, the URLs listed in the ìdentifier` elements containing a .pdf extension are used to create the direct link to the full text.  |
 | Recommended | URL of the source | A related resource from which the described resource is derived. In GoTriple, `dcterms:source`and `dc:source` elements are used to refer to the publishing platform or data repository. ??? |
-| Optional | Type of the resource |  |
-| Optional | Contributor to the resource’s creation |  |
-| Optional | Format of the resource |  |
+| Optional | Type of the resource | The type of the resources should refer to a well-spread taxonomy, like the aforementioned [COAR](https://vocabularies.coar-repositories.org/resource_types/) list of types, or the subset of COAR types listed in [Annexe](#gotriple-list-of-content-types). |
+| Optional | Contributor to the resource’s creation | An entity responsible for making contributions to the resource. Other than the entities that have contributed to the creation of the resource (e.g. a data scientist for a dataset, an editor for a publication), the `contributor` element can be used to list the organizations that have made the creation possible. |
+| Optional | Format of the resource | The file format, physical medium, or dimensions of the resource. Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of [MIME Internet Media Types] (https://www.iana.org/assignments/media-types/media-types.xhtml). |
 | Optional | Information on the source (e.g. journal issue) | This element is used for instance to indicate the relation of an article with a specific journal issue. |
 | Optional | Temporal coverage of the resource |  |
 | Optional | Spatial coverage of the resource |  |
