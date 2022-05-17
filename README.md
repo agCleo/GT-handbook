@@ -103,11 +103,11 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Recommended | Publisher of the resource | An entity responsible for making the resource available. Can be a person, an organization, like a publishing company or a service, like a data archive. The `publisher` element describes the resource and its production, not the creator and its affiliations. |
 | Recommended | URL of the landing page | The URL of the landing page can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI scheme.  |
 | Recommended | URL of the resource | Like the URL of the landing page, the URL of the resource itself can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI scheme. In GoTriple, the URLs listed in the ìdentifier` elements containing a .pdf extension are used to create the direct link to the full text.  |
-| Recommended | URL of the source (e.g. URL of a publishing platform) | A related resource from which the described resource is derived. This element is used for instance to indicate the relation of an article with a specific journal issue. |
+| Recommended | URL of the source | A related resource from which the described resource is derived. In GoTriple, `dcterms:source`and `dc:source` elements are used to refer to the publishing platform or data repository. ??? |
 | Optional | Type of the resource |  |
 | Optional | Contributor to the resource’s creation |  |
 | Optional | Format of the resource |  |
-| Optional | Information on the source (e.g. journal issue) |  |
+| Optional | Information on the source (e.g. journal issue) | This element is used for instance to indicate the relation of an article with a specific journal issue. |
 | Optional | Temporal coverage of the resource |  |
 | Optional | Spatial coverage of the resource |  |
 
