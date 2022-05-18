@@ -2,7 +2,19 @@
 ***WORK IN PROGRESS***
 -----
 
-# GoTriple Content Providers Handbook
+# GoTriple Content Providers Handbook 
+<br>[**1. Purpose of this document**](#purpose-of-this-document)
+<br>[**2. GoTriple policies**](#gotriple-policies)
+<br>[2.1 Scope](#scope)
+<br>[2.2 Content types](#content-types)
+<br>[**3. GoTriple requirements**](#gotriple-requirements)
+<br>[3.1 Technical set-up](#technical-set-up)
+<br>[3.2 GoTriple data model](#gotriple-data-model)
+<br>[**4. Best practices**](#best-practices-for-contents-visibility)
+<br>[4.1 Metadata quality](#metadata-quality)
+<br>[4.2 FAIR principles](#fair-principles)
+<br>[4.3 Aggregators](#aggregators)
+<br>[**5. Process**](#process)
 
 ## Purpose of this document
 [GoTriple](https://www.gotriple.eu/) is a discovery service for the Social Sciences and Humanities community. It is one of the services of the European Research Infrastructure [OPERAS](https://www.operas-eu.org/).   
