@@ -140,8 +140,8 @@ The TRIPLE data model follows the main aspects of the FAIR principles and this h
 GoTriple harvests metadata from major European aggregators and the TRIPLE data model is globally compliant with their own data models. Your content can therefore appear on GoTriple if it is already indexed by our current partner aggregators: DOAB, DOAJ and OpenAIRE. Furthermore, if the content provider doesn't have an OAI repository, GoTriple can ingest data dumps formatted according to the OpenAIRE guidelines.<br/>   
 However, with respect to the TRIPLE data model, each aggregator may have additional requirements. We list below some information about these requirements for the main aggregators that are useful for the SSH research community.
 
-- BASE<br/> 
-[BASE](https://www.base-search.net/) is a search engine for academic web resources operated by Bielefeld University Library. It provides more than 240 million documents from more than 8,000 content providers. Approximately 60% of the indexed documents are in open access. BASE indexes any type of document, from text to datasets or software.<br/>    
+- [BASE](https://www.base-search.net/)<br/> 
+BASE is a search engine for academic web resources operated by Bielefeld University Library. It provides more than 240 million documents from more than 8,000 content providers. Approximately 60% of the indexed documents are open access. BASE indexes any type of document, from text to datasets or software.<br/>    
 As mentioned on their [website](https://www.base-search.net/about/en/faq.php), there are three criteria to become a content provider on BASE:<br/>
 1/ The source contains academic content only<br/>
 2/ At least some documents from the source are available as open access (full texts free of charge, without registration)<br/>
@@ -149,6 +149,11 @@ As mentioned on their [website](https://www.base-search.net/about/en/faq.php), t
 The website provides in addition [guidelines](https://www.base-search.net/about/en/faq_oai.php) for the repository or data managers who will set up the repository and the formatted metadata.
 
 - DOAB
+DOAB is a community-driven discovery service that indexes and provides access to scholarly, peer-reviewed open access books.  
+The current main requirements to take part in DOAB are twofold:
+1/ Academic books in DOAB shall be available under an open access licence (such as a Creative Commons licence)
+2/ Academic books in DOAB shall be subjected to independent and external peer review prior to public.  
+From a technical point of view, the requirements are specified in a [separate document](https://doabooks.ams3.digitaloceanspaces.com/uploads/DOAB_required_publisher_information_and_metadata_guide_1_28cb218c82.pdf). Although most of the requirements are c
 
 
 - DOAJ
