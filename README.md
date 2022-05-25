@@ -136,12 +136,23 @@ The **Reusability** principle relies on clear licensing information, as liberal 
 
 The TRIPLE data model follows the main aspects of the FAIR principles and this handbook will help you to ensure that your content is Findable, Accessible, Interoperable, and Reusable.
 
-
-
-
-
-
 ### Aggregators 
+GoTriple harvests metadata from major European aggregators and the TRIPLE data model is globally compliant with their own data models. Your content can therefore appear on GoTriple if it is already indexed by our current partner aggregators: DOAB, DOAJ and OpenAIRE. Furthermore, if the content provider doesn't have an OAI repository, GoTriple can ingest data dumps formatted according to the OpenAIRE guidelines.<br/>   
+However, with respect to the TRIPLE data model, each aggregator may have additional requirements. We list below some information about these requirements for the main aggregators that are useful for the SSH research community.
+
+- BASE. 
+[BASE](https://www.base-search.net/) is a search engine for academic web resources operated by Bielefeld University Library. It provides more than 240 million documents from more than 8,000 content providers. Approximately 60% of the indexed documents are in open access. BASE indexes any type of document, from text to datasets or software.<br/>    
+As mentioned on their [website](https://www.base-search.net/about/en/faq.php), there are three criteria to become a content provider on BASE:
+1. The source contains academic content only
+2. At least some documents from the source are available as open access (full texts free of charge, without registration)
+3. The metadata of the docments are provided via a valid OAI-PMH interface.<br/>  
+The website provides in addition [guidelines](https://www.base-search.net/about/en/faq_oai.php) for the repository or data managers who will set up the repository and the formatted metadata.
+
+- DOAB
+
+- DOAJ
+- Europeana
+- OpenAIRE
 
 ## Process
 ### Architecture
