@@ -148,15 +148,24 @@ As mentioned on their [website](https://www.base-search.net/about/en/faq.php), t
 3/ The metadata of the docments are provided via a valid OAI-PMH interface.<br/>  
 The website provides in addition [guidelines](https://www.base-search.net/about/en/faq_oai.php) for the repository or data managers who will set up the repository and the formatted metadata.
 
-- DOAB
+- [DOAB](https://www.doabooks.org/en)<br/>
 DOAB is a community-driven discovery service that indexes and provides access to scholarly, peer-reviewed open access books.  
-The current main requirements to take part in DOAB are twofold:
+The current main requirements to provide content in DOAB are twofold:
 1/ Academic books in DOAB shall be available under an open access licence (such as a Creative Commons licence)
 2/ Academic books in DOAB shall be subjected to independent and external peer review prior to public.  
-From a technical point of view, the requirements are specified in a [separate document](https://doabooks.ams3.digitaloceanspaces.com/uploads/DOAB_required_publisher_information_and_metadata_guide_1_28cb218c82.pdf). Although most of the requirements are c
+From a technical point of view, the requirements are specified in a [separate document](https://doabooks.ams3.digitaloceanspaces.com/uploads/DOAB_required_publisher_information_and_metadata_guide_1_28cb218c82.pdf). Although the TRIPLE data model is globally compliant with the DOAB data model, the latter contains information specific to monographs. The DOAB also handles an OAI-PMH repository, but the content provider can send the metadata through a form or a file, without using DublinCore or an OAI-PMH repository.
+
+- [DOAJ](https://doaj.org/)<br/>
+As their website reads, DOAJ is an independent index containing almost 17 500 peer-reviewed, open access journals. The DOAJ covers all areas of science, technology, medicine, social sciences, arts and humanities, with open access journals from all countries and in all languages.   
+The criteria for the journals are the following:   
+1/ The journal must be actively publishing scholarly research.  
+2/ Publish in any research subject area.  
+3/ Should publish at least 5 research articles per year.  
+4/ Its primary target audience should be researchers or practitioners.   
+For newly launched journals, an additional requirement applies: it must demonstrate a publishing history of more than one year, or have published at least 10 articles.   
+There are various ways to upload metadata about articles to DOAJ. It is possible to send JSON files via their API (see [documentation](https://doaj.org/api/docs)). It is also possible, once the journal has been accepted to use a dedicated space to send metadata in an XML file or to enter it manually. The DOAJ provides an [application guide](https://doaj.org/apply/guide/) for the journals publishers. 
 
 
-- DOAJ
 - Europeana
 - OpenAIRE
 
