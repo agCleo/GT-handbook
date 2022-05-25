@@ -124,6 +124,14 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Optional | Spatial coverage of the resource | Contains free or standardized text about the spatial area considered by the resource. The element is only available in QDC: `dcterms:spatial` .  |
 
 ### FAIR principles
+The FAIR principles emerged in 2016 from an interdisplinary group of research data experts. The acronym FAIR refers to four guiding principles for digital data management: making the data Findable, Accessible, Interoperable, and Reusable. The FAIR principles address the need for a common understanding of data management good practices. Instead of creating a new set of technical requirements or standards, the principles propose a number of rules considering the finalities of data management. Although the principles mainly consider technical aspects, they allow, as principles, to adapt the concrete implementations to specific contexts.   
+The four ground principles are further described in a set of fifteen principles. [GOFAIR](https://www.go-fair.org), the organisation supporting the FAIR principles adoption, gives detailed information about [the fifteen FAIR principles](https://www.go-fair.org/fair-principles/). The OPERAS Special Interest Group on "Common standards and FAIR principles" also provided an overview in its [2021 White paper](https://www.operas-eu.org/special-interest-group-living-book/operas-common-standards-white-paper-june-2021/#Common-Standards-2021-FAIR).   
+<br/>
+The FAIR principles are a useful tool to manage digital data in a way that facilitates both human and machines operations. They have been used to built the TRIPLE data model and are now at the core of all major aggregators practices.
+
+
+
+
 ### Aggregators 
 
 ## Process
