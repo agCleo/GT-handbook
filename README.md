@@ -198,33 +198,23 @@ There are various ways to upload metadata about articles to DOAJ. It is possible
 ### Terms of Agreement
 
 ### GoTriple list of content types
--   archival material
--   art exhibition
--   article
--   bibliography
--   blog post
--   book
--   bulletin
--   conference
--   course
--   dataset
--   digital library
--   image
--   learning object
--   manuscript
--   map
--   multimedia
--   periodical
--   preprint
--   report
--   review
--   score
--   seminar
-- slideshow
--   software
--   survey data
--   text
--   thesis
--   web_page
--   other
+- article ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_6501/)) 
+- bibliography ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_86bc/))
+- blog-post ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_6947/))
+- book ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_2f33/))
+- conference ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_c94f/))
+- dataset ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_ddb1/))
+- image ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_c513/))
+- learning-object ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_e059/))
+- manuscript ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_0040/)) 
+- report ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_93fc/))
+- periodical ([COAR type](https://vocabularies.coar-repositories.org/resource_types/QX5C-AR31/))
+- preprint ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_816b/))
+- review ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_efa0/))
+- software ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_5ce6/))
+- text ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_18cf/))
+- thesis ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_46ec/))
+- map ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_12cd/))
+- other ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_1843/))
+
 
