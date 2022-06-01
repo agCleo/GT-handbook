@@ -53,7 +53,7 @@ The following two sections specify the technical set-up enabling GoTriple to acc
 GoTriple collects data from the content providers by using the Open Archive Initiative - Protocol for Metadata Harvesting ([OAI-PMH](http://www.openarchives.org/OAI/openarchivesprotocol.html)). Metadata compliant with the protocol can also be collected as a dump, without an OAI repository. This solution however hinders automated data acquisition and updates. Using a repository harvestable through OAI-PMH should therefore be preferred.
    
 The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. The metadata has to be represented according to the [simple DublinCore (DC)](https://www.dublincore.org/specifications/dublin-core/dces/) standard at least, or in a more expressive format, like for instance [qualified DublinCore (QDC)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). DC and QDC can be expressed in XML, HTML, or XHTML files. The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata.   
-The OAI repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).
+The OAI repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [Eprints](https://www.eprints.org/uk/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).
 
 ### GoTriple data model
 In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects. The metadata of the documents need to be compliant with DublinCore. Thanks to various mappings between metadata standards, the TRIPLE data model can handle other major standards well-spread in the SSH community, like OpenAIRE metadata format or Europeana Data Metadata (EDM) format.
@@ -179,9 +179,26 @@ Europeana is a platform that gives access to millions of digital objects coming 
    
 The Europeana's requirements applying to the data providers are listed on [their website](https://pro.europeana.eu/share-your-data/process).  
 Besides geographical and legal requirements, Europeana also has technical requirements regarding metadata. The metadata should use the [Europeana Data Model](https://pro.europeana.eu/page/edm-documentation) (EDM). Furthermore, Europeana divides the metadata requirements in different levels of quality, which are called "tiers". The data providers should commit to respect one of the [three metadata tiers](https://pro.europeana.eu/files/Europeana_Professional/Publications/Publishing_Framework/Europeana_publishing_framework_metadata_v-0-8.pdf).   
+It is to be noted that Europeana requires the metadata is fully open and reusable.  
 As Europeana relies on aggregators, in order to be assisted in becoming an Europeana data providers, you can pick an aggregator in the [current list](https://pro.europeana.eu/page/aggregators?utm_source=share-your-data%2Fprocess&utm_medium=Find%20an%20aggregator&utm_campaign=internal_link).
 
-- OpenAIRE
+- [OpenAIRE](https://www.openaire.eu/) (*harvested by GoTriple*). 
+  
+Among other services, OpenAIRE offers a [discovery service](https://explore.openaire.eu/) for millions of research outputs: publications, datasets, software and other research products. Although mostly referencing contents produced in the European area, OpenAIRE also accepts contents from outside Europe.  
+GoTriple harvests from OpenAIRE a subset of publications and datasets in the SSH area.  
+  
+OpenAIRE relies on the OAI-PMH protocol to retrieve data. The protocol allows OpenAIRE to harvest data from the [zenodo](https://zenodo.org/) repository and from the research data repositories listed by [re3data](https://www.re3data.org/). It is therefore possible to be harvested by OpenAIRE and indexed on their platform Explore, by having the content stored in one of these repositories.  
+It is also possible to become a content provider for OpenAIRE. Besides the requirement to have an operational OAI-PMH endpoint, becoming a content provider requires to respect these [two main requirements](https://www.openaire.eu/faqs#article-id-1129):  
+1/ Having your repository registered on [OpenDOAR](https://v2.sherpa.ac.uk/opendoar/).  
+2/ Following the OpenAIRE guidelines to establish your metadata.
+
+The OpenAIRE metadata guidelines depends on the type of digital content:  
+- [Guidelines for Literature, institutional, and thematic Repositories](https://guidelines.openaire.eu/en/latest/literature/index.html). 
+- [Guidelines for Data Archives](https://guidelines.openaire.eu/en/latest/data/index.html). 
+- [Guidelines for Software Repository Managers](https://software-guidelines.readthedocs.io/en/latest/). 
+- [Guidelines for Other Research Products](https://guidelines-other-products.readthedocs.io/en/latest/). 
+
+More information about OpenAIRE's content policy can be found in the [dedicated section](https://www.openaire.eu/content-aquisition-policy) of their website, especially the [Terms of Use document](https://www.openaire.eu/terms-of-use-for-content-providers) which has to be reciprocally accepted by OpenAIRE and the content provider.
 
 ## Process
 ### Architecture
