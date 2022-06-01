@@ -124,11 +124,11 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Optional | Spatial coverage of the resource | Contains free or standardized text about the spatial area considered by the resource. The element is only available in QDC: `dcterms:spatial` .  |
 
 ### FAIR principles
-The FAIR principles emerged in 2016 from an interdisplinary group of research data experts. The acronym FAIR refers to four guiding principles for digital data management: making the data Findable, Accessible, Interoperable, and Reusable. The FAIR principles address the need for a common understanding of data management good practices able to facilitate data sharing and reuse. Although the principles mainly consider technical aspects, they allow, as principles, to adapt the concrete implementations to specific contexts. In particular, they can apply to any research digital object: datasets, publications, software, etc.<br/>
+The FAIR principles emerged in 2016 from an interdisciplinary group of research data experts. The acronym FAIR refers to four guiding principles for digital data management: making the data Findable, Accessible, Interoperable, and Reusable. The FAIR principles address the need for a common understanding of data management good practices able to facilitate data sharing and reuse. Although the principles mainly consider technical aspects, they allow, as principles, to adapt the concrete implementations to specific contexts. In particular, they can apply to any research digital object: datasets, publications, software, etc.<br/>
 
 The four ground principles are further described in a set of fifteen principles. [GOFAIR](https://www.go-fair.org), the organisation supporting the FAIR principles adoption, gives detailed information about [the fifteen FAIR principles](https://www.go-fair.org/fair-principles/). The OPERAS Special Interest Group on "Common standards and FAIR principles" also provided an overview in its [2021 White paper](https://www.operas-eu.org/special-interest-group-living-book/operas-common-standards-white-paper-june-2021/#Common-Standards-2021-FAIR).<br/>
 
-The FAIR principles are a useful tool to manage digital data in a way that facilitates both human and machines operations. They have been used to built the TRIPLE data model and are now at the core of all major aggregators practices.  
+The FAIR principles are a useful tool to manage digital data in a way that facilitates both human and machines operations. They have been used to build the TRIPLE data model and are now at the core of all major aggregators practices.  
 The **Findability** principle relies mainly on the use of persistent identifiers and rich descriptive metadata. The metadata should give information about the resource, like: creator, title, persistent identifier, publisher, publication date, abstract and keywords. A counterexample is a corpus stored on a USB device with descriptive information only in the file name.  
 The **Accessibility** principle relies on the use of open, free and documented protocols, such as HTTP, OAI-PMH, FTP, even if they are combined with authentication processes. Accessibility is further improved if metadata gives information about the conditions of access. A counterexample is the data exchanged through emails on individual request.  
 The **Interoperability** principle relies on the use of standard representation of the data, like the DublinCore schema aforementioned. Interoperability can also be reached thanks to documented controlled vocabularies shared within a broad community. A counterexample is a dataset described according to an individual and not documented vocabulary.  
@@ -140,33 +140,47 @@ The TRIPLE data model follows the main aspects of the FAIR principles and this h
 GoTriple harvests metadata from major European aggregators and the TRIPLE data model is globally compliant with their own data models. Your content can therefore appear on GoTriple if it is already indexed by our current partner aggregators: DOAB, DOAJ and OpenAIRE. Furthermore, if the content provider doesn't have an OAI repository, GoTriple can ingest data dumps formatted according to the OpenAIRE guidelines.<br/>   
 However, with respect to the TRIPLE data model, each aggregator may have additional requirements. We list below some information about these requirements for the main aggregators that are useful for the SSH research community.
 
-- [BASE](https://www.base-search.net/)<br/> 
-BASE is a search engine for academic web resources operated by Bielefeld University Library. It provides more than 240 million documents from more than 8,000 content providers. Approximately 60% of the indexed documents are open access. BASE indexes any type of document, from text to datasets or software.<br/>    
-As mentioned on their [website](https://www.base-search.net/about/en/faq.php), there are three criteria to become a content provider on BASE:<br/>
-1/ The source contains academic content only<br/>
-2/ At least some documents from the source are available as open access (full texts free of charge, without registration)<br/>
-3/ The metadata of the docments are provided via a valid OAI-PMH interface.<br/>  
+- [BASE](https://www.base-search.net/).  
+
+BASE is a search engine for academic web resources operated by Bielefeld University Library. It provides more than 240 million documents from more than 8,000 content providers. Approximately 60% of the indexed documents are open access. BASE indexes any type of document, from text to datasets or software.      
+  
+As mentioned on their [website](https://www.base-search.net/about/en/faq.php), there are three criteria to become a content provider on BASE:   
+1/ The source contains academic content only.  
+2/ At least some documents from the source are available as open access (full texts free of charge, without registration).  
+3/ The metadata of the docments are provided via a valid OAI-PMH interface.
+   
 The website provides in addition [guidelines](https://www.base-search.net/about/en/faq_oai.php) for the repository or data managers who will set up the repository and the formatted metadata.
 
-- [DOAB](https://www.doabooks.org/en)<br/>
+- [DOAB](https://www.doabooks.org/en) (*harvested by GoTriple*).  
+   
 DOAB is a community-driven discovery service that indexes and provides access to scholarly, peer-reviewed open access books.  
-The current main requirements to provide content in DOAB are twofold:
-1/ Academic books in DOAB shall be available under an open access licence (such as a Creative Commons licence)
+The current main requirements to provide content in DOAB are twofold:   
+1/ Academic books in DOAB shall be available under an open access licence (such as a Creative Commons licence).  
 2/ Academic books in DOAB shall be subjected to independent and external peer review prior to public.  
+   
 From a technical point of view, the requirements are specified in a [separate document](https://doabooks.ams3.digitaloceanspaces.com/uploads/DOAB_required_publisher_information_and_metadata_guide_1_28cb218c82.pdf). Although the TRIPLE data model is globally compliant with the DOAB data model, the latter contains information specific to monographs. The DOAB also handles an OAI-PMH repository, but the content provider can send the metadata through a form or a file, without using DublinCore or an OAI-PMH repository.
 
-- [DOAJ](https://doaj.org/)<br/>
+- [DOAJ](https://doaj.org/) (*harvested by GoTriple*).  
+   
 As their website reads, DOAJ is an independent index containing almost 17 500 peer-reviewed, open access journals. The DOAJ covers all areas of science, technology, medicine, social sciences, arts and humanities, with open access journals from all countries and in all languages.   
+   
 The criteria for the journals are the following:   
-1/ The journal must be actively publishing scholarly research.  
-2/ Publish in any research subject area.  
+1/ The journal must be actively publishing scholarly research.   
+2/ Publish in any research subject area.     
 3/ Should publish at least 5 research articles per year.  
 4/ Its primary target audience should be researchers or practitioners.   
+   
 For newly launched journals, an additional requirement applies: it must demonstrate a publishing history of more than one year, or have published at least 10 articles.   
 There are various ways to upload metadata about articles to DOAJ. It is possible to send JSON files via their API (see [documentation](https://doaj.org/api/docs)). It is also possible, once the journal has been accepted to use a dedicated space to send metadata in an XML file or to enter it manually. The DOAJ provides an [application guide](https://doaj.org/apply/guide/) for the journals publishers. 
 
+- [Europeana](https://www.europeana.eu/en/about-us).  
+   
+Europeana is a platform that gives access to millions of digital objects coming from European cultural institutions, like libraries, museums, archives, etc. Europeana does not store the original data and expose instead the metadata of digitized cultural objects. The platform relies on aggregators, which curate and enrich the metadata of the cultural institutions in their own perimeter.  
+   
+The Europeana's requirements applying to the data providers are listed on [their website](https://pro.europeana.eu/share-your-data/process).  
+Besides geographical and legal requirements, Europeana also has technical requirements regarding metadata. The metadata should use the [Europeana Data Model](https://pro.europeana.eu/page/edm-documentation) (EDM). Furthermore, Europeana divides the metadata requirements in different levels of quality, which are called "tiers". The data providers should commit to respect one of the [three metadata tiers](https://pro.europeana.eu/files/Europeana_Professional/Publications/Publishing_Framework/Europeana_publishing_framework_metadata_v-0-8.pdf).   
+As Europeana relies on aggregators, in order to be assisted in becoming an Europeana data providers, you can pick an aggregator in the [current list](https://pro.europeana.eu/page/aggregators?utm_source=share-your-data%2Fprocess&utm_medium=Find%20an%20aggregator&utm_campaign=internal_link).
 
-- Europeana
 - OpenAIRE
 
 ## Process
