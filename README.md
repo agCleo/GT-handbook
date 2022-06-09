@@ -236,6 +236,7 @@ DRAFT
 
 ## Support for the providers
 ### Dashboard
+### Terms of Agreement
 ---
 
 ## Credits
@@ -255,8 +256,6 @@ DRAFT
 **Provider**
 
 **Publication**
-
-### Terms of Agreement
 
 ### GoTriple list of content types
 - article ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_6501/)) 
