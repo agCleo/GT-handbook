@@ -14,7 +14,7 @@
 <br>[4.1 Metadata quality](#metadata-quality)
 <br>[4.2 FAIR principles](#fair-principles)
 <br>[4.3 Aggregators](#aggregators)
-<br>[**5. Process**](#process)
+<br>[**5. Process and Support**](#process-and-support)
 
 ## Purpose of this document
 [GoTriple](https://www.gotriple.eu/) is a discovery service for the Social Sciences and Humanities community. It is one of the services of the European Research Infrastructure [OPERAS](https://www.operas-eu.org/).   
