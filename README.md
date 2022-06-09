@@ -182,6 +182,14 @@ Besides geographical and legal requirements, Europeana also has technical requir
 It is to be noted that Europeana requires the metadata is fully open and reusable.  
 As Europeana relies on aggregators, in order to be assisted in becoming an Europeana data providers, you can pick an aggregator in the [current list](https://pro.europeana.eu/page/aggregators?utm_source=share-your-data%2Fprocess&utm_medium=Find%20an%20aggregator&utm_campaign=internal_link).
 
+- [Isidore](https://isidore.science/) (*harvested by GoTriple*).
+  
+Isidore is a French platform dedicated to social sciences and humanities scientific outputs. It contains over than 10 millions documents, ranging from publications to data ([full list of types](https://isidore.science/sparql?default-graph-uri=&query=PREFIX+skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0D%0Aselect+distinct+*+where+%7B%0D%0A%3Chttp%3A%2F%2Fisidore.science%2Fontology%23dataset%3E+%3Fpredicat+%3Fobjet%0D%0A%7D&format=text%2Fhtml&timeout=0&debug=on)). Isidore has the specificity to offer high quality automated enrichments in three languages (ENG, FRA, SPA) aligned with major authority databases (e.g. RAMEAU, LCSH, BNE) and exposed in a structured way compliant with semantic web requirements. Isidore served as basis for the building of GoTriple.
+   
+Isidore relies on the OAI-PMH protocol to retrieve data. Although enrichments are proposed only in three languages, the platform can harvest contents in any language. At present, it collects metadata from a variety of publishing platforms, archives, and repositories in Europe and beyond. The data sources are listed in the documentation (French only).   
+In order to have contents harvested by Isidore, it is required to have a valid OAI-PMH endpoint and provide simple or qualified DublinCore metadata. The guidelines for metadata management provided by the [DublinCore Metadata Innovation](https://www.dublincore.org/) group are applicable for the harvesting by Isidore.   
+Any repository or publisher interested in being harvested by Isidore should contact directly the administrators of the platform using this email address: isidore-sources(at)huma-num.fr.
+
 - [OpenAIRE](https://www.openaire.eu/) (*harvested by GoTriple*). 
   
 Among other services, OpenAIRE offers a [discovery service](https://explore.openaire.eu/) for millions of research outputs: publications, datasets, software and other research products. Although mostly referencing contents produced in the European area, OpenAIRE also accepts contents from outside Europe.  
