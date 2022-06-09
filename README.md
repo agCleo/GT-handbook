@@ -208,13 +208,35 @@ The OpenAIRE metadata guidelines depends on the type of digital content:
 
 More information about OpenAIRE's content policy can be found in the [dedicated section](https://www.openaire.eu/content-aquisition-policy) of their website, especially the [Terms of Use document](https://www.openaire.eu/terms-of-use-for-content-providers) which has to be reciprocally accepted by OpenAIRE and the content provider.
 
-## Process
+## Process and support
+*This section is to date a work in progress, as some of the tools mentioned here are still under development*  
+  
+Content providers interested in being harvested by GoTriple should first check the GoTriple policies and requirements described in this document (see [GoTriple policies](#gotriple-policies) and [GoTriple requirements](#gotriple-requirements)). In case any additional information is needed, the content providers can send their questions to the GoTriple contact email address: (TBC).  
+  
+The process to be harvested and assisted by GoTriple consists in two phases. The content provider should first register to the content provider space. This space will allow the content provider to communicate with the GoTriple administrators and follow the harvesting of the data.
+   
+Here are the two phases described in more details:  
+- Phase 1: Registration  
+The content provider fills up a web form on the GoTriple dedicated space to register as a provider.  
+The GoTriple administrator validates the registration request.  
+After registration, the content provider receives a notification, completes the registration (login/password) and enters the Providers' space.  
+- Phase 2: Content source proposal  
+The content provider can propose one or more content sources.  
+The GoTriple administrator controls the proposed content sources and validates them.  
+The content provider can always see the proposed sources but cannot modify those that have been approved.  
+If the sources should be modified, it is necessary to contact the GoTriple administrator at (TBC).   
+   
+
+---
+DRAFT
+## Process 
 ### Architecture
 ### Quality control
 ### Enrichment
 
 ## Support for the providers
 ### Dashboard
+---
 
 ## Credits
 
