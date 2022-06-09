@@ -17,7 +17,7 @@
 <br>[**5. Process and Support**](#process-and-support)
 
 ## Purpose of this document
-[GoTriple](https://www.gotriple.eu/) is a discovery service for the Social Sciences and Humanities community. It is one of the services of the European Research Infrastructure [OPERAS](https://www.operas-eu.org/).   
+[GoTriple](https://www.gotriple.eu/) is a discovery service for scientific outputs in the Social Sciences and Humanities area. It is one of the services of the European Research Infrastructure [OPERAS](https://www.operas-eu.org/).   
 The GoTriple platform allows to search through publications, datasets, researchers' profiles, and research projects. Publications and datasets metadata are collected from both content aggregators and content providers (see [Glossary](#glossary)).
 
 This handbook is addressed to the **GoTriple content providers**. 
@@ -25,21 +25,22 @@ It presents the policies, technical requirements, and supporting actions enablin
 
 ## GoTriple Policies
 ### Scope
-*Scientific fields*: GoTriple collects metadata of contents in the **Social Sciences and Humanities (SSH)** field. The content providers can be domain specific or not.
+*Scientific fields*: GoTriple collects metadata of contents in the **Social Sciences and Humanities (SSH)** field (see [Content types](#content-types) section). The content providers can be domain specific or not. In case they are not dedicated to SSH, the content providers are responsible for selecting SSH contents in their collections.
 
 *Data definition*: GoTriple only collects **metadata of the contents**. The platform does not collect or store the contents of the providers.
 
-*Geographic area*: GoTriple operates in the **European area** and collects data from European providers. The platform provides enrichments for a limited number of European languages and  collects therefore contents firstly in these languages.
+*Perimeter*: GoTriple operates in the **European area** and provides enrichments for a limited number of European languages. Therefore, the platform mainly collects data from European providers and in European languages. However, it can also collect data from other geographic and linguistic areas.
 
-*Openness*: As a service of OPERAS, the RI dedicated to open scholarly communication in the SSH, GoTriple supports **open access** to the contents. The platform however collects open and not open access contents. The metadata of the contents need to be freely accessible and reusable.
+*Openness*: As a service of OPERAS, the RI dedicated to open scholarly communication in the SSH, GoTriple promotes open access to the contents. Openness applies to datasets (open data) and publications (open access). The platform however collects open and not open access contents. The metadata of the contents need to be freely accessible and reusable.
 
 *Providers type*: GoTriple providers can be of any size and provide large or small amount of contents in one or many SSH fields. GoTriple works with major aggregators, but also facilitates data acquisition from **small repositories or publishers**, like for instance diamond journals.
 
-*GoTriple supported languages*: Croatian, English, French, German, Greek, Italian, Polish, Portuguese, Spanish. 
+*GoTriple supported languages*: GoTriple provides enrichments of the metadata in the following languages: Croatian (HRV), English (ENG), French (FRA), German (DEU), Greek (ELL), Italian (ITA), Polish (POL), Portuguese (POR), Slovenian (SLV), Spanish (SPA), Ukrainian (UKR). The platform however accepts contents in any language.
 
 ### Content types
 This handbook only considers the data collected about scientific resources. Data about researchers' profiles and research projects are collected through distinct automated processes.   
-In GoTriple, the resources are publications and datasets, which are all named "documents".  A **document** is the information asset of a unique and deduplicated resource.
+In GoTriple, the resources are publications and datasets, which are all named "documents".  
+A **document** is the information asset, i.e. a series of metadata, of a unique and deduplicated resource.
 
 The list of content types available on GoTriple is based on a subset of the [COAR list of types](https://vocabularies.coar-repositories.org/resource_types/)  (see [Annexe](#gotriple-list-of-content-types)).   
 On GoTriple, **publications** are any type of text or material related to the SSH research environment, from articles or thesis, to reports or learning material. 
@@ -56,7 +57,7 @@ The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiati
 The OAI repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [Eprints](https://www.eprints.org/uk/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).
 
 ### GoTriple data model
-In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects. The metadata of the documents need to be compliant with DublinCore. Thanks to various mappings between metadata standards, the TRIPLE data model can handle other major standards well-spread in the SSH community, like OpenAIRE metadata format or Europeana Data Metadata (EDM) format.
+In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects. When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified. When metadata is collected through database’s dumps, it is possible to use other schemas. Thanks to various mappings between metadata standards, the TRIPLE data model can handle other major standards well-spread in the SSH community, like OpenAIRE metadata format or Europeana Data Metadata (EDM) format.
 
 Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding tag elements in simple DC and QDC, and their expression in the TRIPLE data model.  
    
@@ -67,7 +68,7 @@ Below, we describe the current TRIPLE data model for documents, specifying the l
 | Mandatory | Identifier of the resource| dcterms:identifier, dc:identifier | schema:identifier |
 | Mandatory | Title of the resource| dcterms:title, dc:title| schema:headline |
 | Recommended | Abstract  | dcterms:description, dc:description, dcterms:abstract | schema:abstract |
-| Recommended | Access rights to the resource | dcterms:accessRights, ??dcterms:conditions??, ??dc:conditions?? |schema:conditionsOfAccess |
+| Recommended | Access rights to the resource | dcterms:accessRights |schema:conditionsOfAccess |
 | Recommended | Date of publication or creation  | dcterms:date, dc:date, dcterms:issued, dcterms:created, dcterms:available | schema:datePublished |
 | Recommended | Keywords  | dcterms:subject, dc:subject | schema:keywords |
 | Recommended | Language of the resource | dcterms:language, dc:language | schema:inLanguage | 
@@ -128,10 +129,14 @@ The FAIR principles emerged in 2016 from an interdisciplinary group of research 
 
 The four ground principles are further described in a set of fifteen principles. [GOFAIR](https://www.go-fair.org), the organisation supporting the FAIR principles adoption, gives detailed information about [the fifteen FAIR principles](https://www.go-fair.org/fair-principles/). The OPERAS Special Interest Group on "Common standards and FAIR principles" also provided an overview in its [2021 White paper](https://www.operas-eu.org/special-interest-group-living-book/operas-common-standards-white-paper-june-2021/#Common-Standards-2021-FAIR).<br/>
 
-The FAIR principles are a useful tool to manage digital data in a way that facilitates both human and machines operations. They have been used to build the TRIPLE data model and are now at the core of all major aggregators practices.  
+The FAIR principles are a useful tool to manage digital data in a way that facilitates both human and machine operations. They have been used to build the TRIPLE data model and are now at the core of all major aggregators practices.  
+  
 The **Findability** principle relies mainly on the use of persistent identifiers and rich descriptive metadata. The metadata should give information about the resource, like: creator, title, persistent identifier, publisher, publication date, abstract and keywords. A counterexample is a corpus stored on a USB device with descriptive information only in the file name.  
+  
 The **Accessibility** principle relies on the use of open, free and documented protocols, such as HTTP, OAI-PMH, FTP, even if they are combined with authentication processes. Accessibility is further improved if metadata gives information about the conditions of access. A counterexample is the data exchanged through emails on individual request.  
+  
 The **Interoperability** principle relies on the use of standard representation of the data, like the DublinCore schema aforementioned. Interoperability can also be reached thanks to documented controlled vocabularies shared within a broad community. A counterexample is a dataset described according to an individual and not documented vocabulary.  
+  
 The **Reusability** principle relies on clear licensing information, as liberal as possible, preferably standard and recorded in the metadata. It should be completed with clear provenance information, which allows to better assess the reusability possibilities. A counterexample, without mentioning the lack of any license, is a license containing unclear conditions of use in a separate PDF file.<br/>
 
 The TRIPLE data model follows the main aspects of the FAIR principles and this handbook will help you to ensure that your content is Findable, Accessible, Interoperable, and Reusable.
@@ -147,7 +152,7 @@ BASE is a search engine for academic web resources operated by Bielefeld Univers
 As mentioned on their [website](https://www.base-search.net/about/en/faq.php), there are three criteria to become a content provider on BASE:   
 1/ The source contains academic content only.  
 2/ At least some documents from the source are available as open access (full texts free of charge, without registration).  
-3/ The metadata of the docments are provided via a valid OAI-PMH interface.
+3/ The metadata of the documents are provided via a valid OAI-PMH interface.
    
 The website provides in addition [guidelines](https://www.base-search.net/about/en/faq_oai.php) for the repository or data managers who will set up the repository and the formatted metadata.
 
