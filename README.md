@@ -78,10 +78,10 @@ Below, we describe the current TRIPLE data model for documents, specifying the l
 | Recommended | Language of the resource | dcterms:language, dc:language | schema:inLanguage | 
 | Recommended | License | dcterms:rights, dc:rights | schema:license |
 | Recommended | Publisher of the resource | dcterms:publisher, dc:publisher | schema:publisher |
+| Recommended | Type of the resource | dcterms:type, dc:type | schema:additionalType |
 | Recommended | URL of the landing page | dcterms:identifier  dc:identifier | schema:mainEntityOfPage |
 | Recommended | URL of the resource | dcterms:identifier  dc:identifier | schema:url |
 | Recommended | URL of the source (e.g. URL of a publishing platform) | dcterms:source, dc:source | schema:isBasedOnURL |
-| Optional | Type of the resource | dcterms:type, dc:type | schema:additionalType |
 | Optional | Contributor to the resource’s creation | dcterms:contributor, dc:contributor | schema:contributor |
 | Optional | Format of the resource | dcterms:format, dc:format| schema:encodingFormat |
 | Optional | Information on the source (e.g. journal issue) | dcterms:relation, dc:relation | schema:mentions |
@@ -118,10 +118,10 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Recommended | Language of the resource | Describes the language in which the resource is expressed. Like for keywords, best practice is to use the [ISO 639-3](https://iso639-3.sil.org/) three-letters code. | 
 | Recommended | License | A legal document indicating how the resource can be accessed and used. In QDC, there is a specific element for the licensing information: `dcterms:license`. This element can also contain information about copyright and intellectual property rights.<br/>While a license can be a free text, it is preferable to use standardized licenses: they are easier to understand for humans and can facilitate machine-readability. In the context of open science, especially, it is recommended to use well-spread open licenses, for example [Creative Commons (CC) licenses](https://creativecommons.org/about/cclicenses/). The CC licenses allow to indicate an URL and to indicate the license type in a simple way.|
 | Recommended | Publisher of the resource | An entity responsible for making the resource available. Can be a person, an organization, like a publishing company or a service, like a data archive. The `publisher` element describes the resource and its production, not the creator and its affiliations. |
+| Recommended | Type of the resource | The type of the resources should refer to a well-spread taxonomy, like the aforementioned [COAR list of types](https://vocabularies.coar-repositories.org/resource_types/), or the subset of COAR types listed in [Annexe](#gotriple-list-of-content-types). |
 | Recommended | URL of the landing page | The URL of the landing page can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI scheme.  |
 | Recommended | URL of the resource | Like the URL of the landing page, the URL of the resource itself can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI encoding scheme. In GoTriple, the URLs listed in the `identifier` elements containing a .pdf extension are used to create the direct link to the full text.  |
 | Recommended | URL of the source | A related resource from which the described resource is derived. In GoTriple, `dcterms:source`and `dc:source` elements ??are used to refer to the publishing platform or data repository.?? |
-| Optional | Type of the resource | The type of the resources should refer to a well-spread taxonomy, like the aforementioned [COAR list of types](https://vocabularies.coar-repositories.org/resource_types/), or the subset of COAR types listed in [Annexe](#gotriple-list-of-content-types). |
 | Optional | Contributor to the resource’s creation | An entity responsible for making contributions to the resource. Other than the entities that have contributed to the creation of the resource (e.g. a data scientist for a dataset, an editor for a publication), the `contributor` element can be used to list the organizations that have made the creation possible. |
 | Optional | Format of the resource | The file format, physical medium, or dimensions of the resource. Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of [MIME Internet media types](https://www.iana.org/assignments/media-types/media-types.xhtml)|
 | Optional | Information on the source (e.g. journal issue) | This element is used for instance to indicate the relation of an article with a specific journal issue. |
