@@ -220,7 +220,7 @@ More information about OpenAIRE's content policy can be found in the [dedicated 
 ## Process and support
 *This section is to date a work in progress, as some of the tools mentioned here are still under development*  
   
-Content providers interested in being harvested by GoTriple should first check the GoTriple policies and requirements described in this document (see [GoTriple policies](#gotriple-policies) and [GoTriple requirements](#gotriple-requirements)).   
+Content providers interested in being harvested by GoTriple should first check the GoTriple policies and requirements described in this document (see [GoTriple policies](#gotriple-policies) and [GoTriple requirements](#gotriple-requirements)). In order to be harvested by GoTriple, the content providers should contact the GoTriple administrators at: (TBD).   
 
 Here is a summary of the content acquisition's main steps:  
 - **Instance**  
