@@ -220,16 +220,31 @@ More information about OpenAIRE's content policy can be found in the [dedicated 
 ## Process and support
 *This section is to date a work in progress, as some of the tools mentioned here are still under development*  
   
-Content providers interested in being harvested by GoTriple should first check the GoTriple policies and requirements described in this document (see [GoTriple policies](#gotriple-policies) and [GoTriple requirements](#gotriple-requirements)). In case any additional information is needed, the content providers can send their questions to the GoTriple contact email address: (TBC).  
-  
-The process to be harvested and assisted by GoTriple consists in two phases. The content provider should first register to the content provider space. This space will allow the content provider to communicate with the GoTriple administrators and follow the harvesting of the data.
-   
-Here are the two phases described in more details:  
-- Phase 1: Registration  
+Content providers interested in being harvested by GoTriple should first check the GoTriple policies and requirements described in this document (see [GoTriple policies](#gotriple-policies) and [GoTriple requirements](#gotriple-requirements)).   
+
+Here is a summary of the content acquisition's main steps:  
+- **Instance**  
+Checking if the content is already on GoTriple.  
+- **Access**  
+Checking if the provider already has an OAI-PMH repository available.  
+If not, checking if the OAI-PMH repository can be easily activated or installed.
+- **Interoperability**  
+Checking if the metadata is available at least in the simple DC standard.  
+If not, if it can be formatted according to the simple DC standard.  
+If not, if it can be formatted according to the OpenAIRE guidelines.  
+- **Acquisition**  
+Acquisition of the contents through the OAI-PMH and the DC standard.  
+If not possible, acquisition of the contents through a DC or OpenAIRE formatted file.  
+- **Validation**  
+Checking through the providers' dashboard that the content has been correctly ingested.   
+
+This workflow will occur through the content provider's space. Upon the content provider's registration, this space will allow the content provider to communicate with the GoTriple administrators and follow the harvesting of the data.  
+The content providers' space will allow the two main following actions:
+- Registration  
 The content provider fills up a web form on the GoTriple dedicated space to register as a provider.  
 The GoTriple administrator validates the registration request.  
 After registration, the content provider receives a notification, completes the registration (login/password) and enters the Providers' space.  
-- Phase 2: Content source proposal  
+- Content source proposal  
 The content provider can propose one or more content sources.  
 The GoTriple administrator controls the proposed content sources and validates them.  
 The content provider can always see the proposed sources but cannot modify those that have been approved.  
