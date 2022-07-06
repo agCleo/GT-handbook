@@ -42,7 +42,7 @@ It presents the policies, technical requirements, and supporting actions enablin
 ### Content types
 This handbook only considers the data collected about scientific resources. Data about researchers' profiles and research projects are collected through distinct automated processes.   
 In GoTriple, the resources are publications and datasets, which are all named "documents".  
-A **document** is the information asset, i.e. a series of metadata, of a unique and deduplicated resource.
+A **document** is the information asset, i.e. a series of metadata, of a unique and deduplicated resource (see [Glossary](#glossary)).
 
 The list of content types available on GoTriple is based on a subset of the [COAR list of types](https://vocabularies.coar-repositories.org/resource_types/)  (see [Annexe](#gotriple-list-of-content-types)).   
 On GoTriple, **publications** are any type of text or material related to the SSH research environment, from articles or thesis, to reports or learning material. 
