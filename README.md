@@ -286,6 +286,7 @@ On GoTriple, corresponds to a collection of files produced within a research pro
 Refers to the information asset related to a specific digital object; it is used to identify single scholarly resources such as publications and datasets. On GoTriple, a document corresponds to the set of metadata, collected or generated, describing a scholarly resource.
 
 **Harvester**
+In the context of OAI-PMH, the Open Archive Initiative - Protocol for Metadata Harvesting, a harvester is the entity collecting automatically metadata exposed in an OAI-PMH repository. Harvesters can collect metadata from many providers, in which case the harvesters can be defined as aggregators.
 
 **Provider**  
 An organisation that manages, collects, and disseminates scholarly resources. It operates as the manager of one or various data repositories, archives, or publishing platforms. A provider enriches the data it is responsible for with metadata facilitating its dissemination, and acts as the primary dissemination body of the data and its metadata.
