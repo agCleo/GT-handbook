@@ -218,8 +218,8 @@ The OpenAIRE metadata guidelines depends on the type of digital content:
 More information about OpenAIRE's content policy can be found in the [dedicated section](https://www.openaire.eu/content-aquisition-policy) of their website, especially the [Terms of Use document](https://www.openaire.eu/terms-of-use-for-content-providers) which has to be reciprocally accepted by OpenAIRE and the content provider.
 
 ## Process and support
-*This section is to date a work in progress, as some of the tools mentioned here are still under development*  
-  
+*This section is a work in progress, as some of the tools mentioned here are still under development.*  
+### Content acquisition main steps  
 Content providers interested in being harvested by GoTriple should first check the GoTriple policies and requirements described in this document (see [GoTriple policies](#gotriple-policies) and [GoTriple requirements](#gotriple-requirements)). In order to be harvested by GoTriple, the content providers should contact the GoTriple administrators at: (TBD).   
 
 Here is a summary of the content acquisition's main steps:  
@@ -238,6 +238,7 @@ If not possible, acquisition of the contents through a DC or OpenAIRE formatted 
 - **Validation**  
 Checking through the providers' dashboard that the content has been correctly ingested.   
 
+### Content provider's dashboard
 This workflow will occur through the content provider's space. Upon the content provider's registration, this space will allow the content provider to communicate with the GoTriple administrators and follow the harvesting of the data.  
 The content providers' space will allow the two main following actions:
 - *Registration*  
@@ -267,21 +268,28 @@ DRAFT
 The GoTriple platform and this handbook have been created through the project [TRIPLE](https://project.gotriple.eu/gotriple-platform/) (Transforming Research Through Innovative
 Practices for Linked Interdisciplinary Exploration).   
 TRIPLE has received funding from the European Union’s Horizon 2020 Research and Innovation action funding scheme INFRAEOSC-02-2019 “Prototyping new innovative services” (grant agreement #863420).
+
 ## Annexe
 ### Glossary
-**Aggregator**
+**Aggregator**  
+An organisation that collects, manages, and disseminates the metadata of the scholarly resources’ made available by various providers. The aggregator operates as a standardisation body of heterogeneous metadata, either by defining its own requirements, or by relying on existing standards for harvesting and dissemination.
 
-**Core pipeline**
+**Core pipeline**  
+The back-end system of the TRIPLE infrastructure that takes care of acquiring, normalising and semantically enriching data from multiple sources. 
 
-**Dataset**
+**Dataset**  
+On GoTriple, corresponds to a collection of files produced within a research project for analysis and processing. A dataset can contain files of various types (surveys, recordings, images, measures, etc.) and formats (video, audio, spreadsheets, etc.).
 
-**Document**
+**Document**  
+Refers to the information asset related to a specific digital object; it is used to identify single scholarly resources such as publications and datasets. On GoTriple, a document corresponds to the set of metadata, collected or generated, describing a scholarly resource.
 
 **Harvester**
 
-**Provider**
+**Provider**  
+An organisation that manages, collects, and disseminates scholarly resources. It operates as the manager of one or various data repositories, archives, or publishing platforms. A provider enriches the data it is responsible for with metadata facilitating its dissemination, and acts as the primary dissemination body of the data and its metadata.
 
 **Publication**
+On GoTriple, a publication is a textual object formatted for dissemination and produced in the context of research. A publication can be of various types (article, book, report, training, etc.) and formats (pdf, epub, presentation, etc.). 
 
 ### GoTriple list of content types
 - article ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_6501/)) 
