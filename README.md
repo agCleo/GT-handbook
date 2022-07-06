@@ -49,13 +49,21 @@ On GoTriple, **publications** are any type of text or material related to the SS
 As for the **datasets**, they are a set of organized research data. In the context of GoTriple, these resources are only indexed at the level of the global collection. Each single file of the datasets is therefore not indexed.   
 
 ## GoTriple Requirements
-In order to have their contents collected by GoTriple, the providers essentially have to respect two requirements: providing an *access to their metadata*; providing *metadata compliant* with the platform's data model.   
+In order to have their contents collected by GoTriple, the providers essentially have to respect two requirements: providing an *access to their metadata*; providing *metadata compliant* with the platform's data model.  
+  
+The contents of the providers can be indexed on GoTriple in three ways:
+- by having the content on one of the aggregators of GoTriple (currently: [DOAB](https://www.doabooks.org/en), [DOAJ](https://doaj.org/), [Isidore](https://isidore.science/) and [OpenAIRE](https://www.openaire.eu/)): in this case, the content will be automatically collected by GoTriple.
+- by sending a metadata file to the GoTriple administrators: in this case, the metadata file has to be formatted according to the simple Dublin Core standard or the OpenAIRE guidelines.
+- by following the GoTriple requirements for the technical set-up and the data model, i.e. using the OAI protocol and the DC metadata standard.
+
+The first option does not require any action from the providers if their content is already indexed by the listed aggregators, anf if not, it requires to follow the aggregators specific guidelines (see [Aggregators](#aggregators) section).  
+The second option allows to provide metadata compliant with the GoTriple data model without using the OAI protocol. This solution however hinders automated data acquisition and updates. Using a repository harvestable through OAI-PMH should therefore be preferred.  
+The third option ensures that the metadata is easily processable and can be regularly updated in an automated way.  
+  
 The following two sections specify the technical set-up enabling GoTriple to access the metadata and the model that these metadata should follow to be indexed by GoTriple.
 
 ### Technical set-up
-GoTriple collects data from the content providers by using the Open Archive Initiative - Protocol for Metadata Harvesting ([OAI-PMH](http://www.openarchives.org/OAI/openarchivesprotocol.html)). Metadata compliant with the protocol can also be collected as a dump, without an OAI repository. This solution however hinders automated data acquisition and updates. Using a repository harvestable through OAI-PMH should therefore be preferred.
-   
-The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. The metadata has to be represented according to the [simple DublinCore (DC)](https://www.dublincore.org/specifications/dublin-core/dces/) standard at least, or in a more expressive format, like for instance [qualified DublinCore (QDC)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). DC and QDC can be expressed in XML, HTML, or XHTML files. The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata.   
+GoTriple collects data from the content providers by using the Open Archive Initiative - Protocol for Metadata Harvesting ([OAI-PMH](http://www.openarchives.org/OAI/openarchivesprotocol.html)). The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. The metadata has to be represented according to the [simple DublinCore (DC)](https://www.dublincore.org/specifications/dublin-core/dces/) standard at least, or in a more expressive format, like for instance [qualified DublinCore (QDC)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). DC and QDC can be expressed in XML, HTML, or XHTML files. The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata.   
 The OAI repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [Eprints](https://www.eprints.org/uk/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).   
 A list of open source tools to set up an OAI repository is available on the website of the [Open Archive Initiative](https://www.openarchives.org/pmh/tools/).  
    
@@ -148,8 +156,8 @@ The **Reusability** principle relies on clear licensing information, as liberal 
 The TRIPLE data model follows the main aspects of the FAIR principles and this handbook will help you to ensure that your content is Findable, Accessible, Interoperable, and Reusable.
 
 ### Aggregators 
-GoTriple harvests metadata from major European aggregators and the TRIPLE data model is globally compliant with their own data models. Your content can therefore appear on GoTriple if it is already indexed by our current partner aggregators: DOAB, DOAJ and OpenAIRE. Furthermore, if the content provider doesn't have an OAI repository, GoTriple can ingest data dumps formatted according to the OpenAIRE guidelines.<br/>   
-However, with respect to the TRIPLE data model, each aggregator may have additional requirements. We list below some information about these requirements for the main aggregators that are useful for the SSH research community.
+GoTriple harvests metadata from major European aggregators and the TRIPLE data model is globally compliant with their own data models. Your content can therefore appear on GoTriple if it is already indexed by our current partner aggregators: DOAB, DOAJ, Isidore and OpenAIRE. Furthermore, if the content provider doesn't have an OAI repository, GoTriple can ingest data dumps formatted according to the OpenAIRE guidelines.<br/>   
+However, with respect to the TRIPLE data model, each aggregator may have additional requirements. We list below some information about these requirements for the main aggregators that are useful for the SSH research community, including aggregators that are not harvested yet by GoTriple (BASE and Europeana).  
 
 - [BASE](https://www.base-search.net/).  
 
