@@ -54,7 +54,7 @@ In order to have their contents collected by GoTriple, the providers essentially
 The contents of the providers can be indexed on GoTriple in three ways:
 - by having the content on one of the aggregators of GoTriple (currently: [DOAB](https://www.doabooks.org/en), [DOAJ](https://doaj.org/), [Isidore](https://isidore.science/) and [OpenAIRE](https://www.openaire.eu/)): in this case, the content will be automatically collected by GoTriple.
 - by sending a metadata file to the GoTriple administrators: in this case, the metadata file has to be formatted according to the simple Dublin Core standard or the OpenAIRE guidelines.
-- by following the GoTriple requirements for the technical set-up and the data model, i.e. using the OAI protocol and the DC metadata standard.
+- by following the GoTriple recommendations for the technical set-up and the data model, i.e. using the OAI protocol and the DC metadata standard.
 
 The first option does not require any action from the providers if their content is already indexed by the listed aggregators, anf if not, it requires to follow the aggregators specific guidelines (see [Aggregators](#aggregators) section).  
 The second option allows to provide metadata compliant with the GoTriple data model without using the OAI protocol. This solution however hinders automated data acquisition and updates. Using a repository harvestable through OAI-PMH should therefore be preferred.  
