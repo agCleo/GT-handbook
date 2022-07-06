@@ -1,5 +1,5 @@
 
-***DRAFT V0.2***
+***DRAFT V0.3***
 -----
 
 # GoTriple Content Providers Handbook 
