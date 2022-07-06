@@ -15,6 +15,8 @@
 <br>[4.2 FAIR principles](#fair-principles)
 <br>[4.3 Aggregators](#aggregators)
 <br>[**5. Process and Support**](#process-and-support)
+<br>[5.1 Content acquisition main steps](#content-acquisition-main-steps)
+<br>[5.2 Content provider's dashboard](#content-providers-dashboard)
 
 ## Purpose of this document
 [GoTriple](https://www.gotriple.eu/) is a discovery service for scientific outputs in the Social Sciences and Humanities area. It is one of the services of the European Research Infrastructure [OPERAS](https://www.operas-eu.org/).   
