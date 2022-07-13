@@ -33,14 +33,14 @@ It presents the policies, technical requirements, and supporting actions enablin
 
 *Perimeter*: GoTriple operates in the **European area** and provides enrichments for a limited number of European languages. Therefore, the platform mainly collects data from European providers and in European languages. However, it can also collect data from other geographic and linguistic areas.
 
-*Openness*: As a service of OPERAS, the RI dedicated to open scholarly communication in the SSH, GoTriple promotes open access to the contents. **Openness** applies to datasets (open data) and publications (open access). The platform however collects open and not open access contents. The metadata of the contents need to be freely accessible and reusable.
+*Openness*: As a service of OPERAS, the Research Infrastructure dedicated to open scholarly communication in the SSH, GoTriple promotes open access to the contents. **Openness** applies to datasets (open data) and publications (open access). The platform however collects open and not open access contents. The metadata of the contents need to be freely accessible and reusable.
 
 *Providers type*: GoTriple providers can be of any size and provide large or small amount of contents in one or many SSH fields. GoTriple works with major aggregators, but also facilitates data acquisition from **small repositories or publishers**, like for instance diamond journals.
 
 *GoTriple supported languages*: GoTriple provides enrichments of the metadata in the following languages: Croatian (HRV), English (ENG), French (FRA), German (DEU), Greek (ELL), Italian (ITA), Polish (POL), Portuguese (POR), Slovenian (SLV), Spanish (SPA), Ukrainian (UKR). The platform however accepts contents in any language.
 
 ### Content types
-This handbook only considers the data collected about scientific resources. Data about researchers' profiles and research projects are collected through distinct automated processes.   
+This handbook only considers the data collected on scientific resources. Data on researchers' profiles and research projects are collected through distinct automated processes.   
 In GoTriple, the resources are publications and datasets, which are all named "documents".  
 A **document** is the information asset, i.e. a series of metadata, of a unique and deduplicated resource (see [Glossary](#glossary)).
 
@@ -49,25 +49,25 @@ On GoTriple, **publications** are any type of text or material related to the SS
 As for the **datasets**, they are a set of organized research data. In the context of GoTriple, these resources are only indexed at the level of the global collection. Each single file of the datasets is therefore not indexed.   
 
 ## GoTriple Requirements
-In order to have their contents collected by GoTriple, the providers essentially have to respect two requirements: providing an *access to their metadata*; providing *metadata compliant* with the platform's data model.  
+In order to have their contents collected by GoTriple, the providers essentially have to respect two requirements: providing an *access to their metadata* and providing *metadata compliant* with the platform's data model.  
   
 The providers can have their contents indexed on GoTriple in three ways:
-- by having their contents on one of the aggregators of GoTriple (currently: [DOAB](https://www.doabooks.org/en), [DOAJ](https://doaj.org/), [Isidore](https://isidore.science/) and [OpenAIRE](https://www.openaire.eu/)): in this case, the content will be automatically collected by GoTriple.
-- by sending a metadata file to the GoTriple administrators: in this case, the metadata file has to be formatted according to ??the simple Dublin Core standard or the OpenAIRE guidelines??.
 - by following the GoTriple recommendations for the technical set-up and the data model, i.e. using the OAI protocol and the DC metadata standard.
+- by sending a metadata file to the GoTriple administrators formatted according to the OpenAIRE format used by GoTriple (TBD ANNEXE TO ADD).
+- by having their contents on one of the aggregators of GoTriple (currently: [DOAB](https://www.doabooks.org/en), [DOAJ](https://doaj.org/), [Isidore](https://isidore.science/) and [OpenAIRE](https://www.openaire.eu/)): in this case, the content will be automatically collected by GoTriple.
 
-The first option does not require any action from the providers if their content is already indexed by the listed aggregators, anf if not, it requires to follow the aggregators specific guidelines (see [Aggregators](#aggregators) section).  
-The second option allows to provide metadata compliant with the GoTriple data model without using the OAI protocol. This solution however hinders automated data acquisition and updates. Using a repository harvestable through OAI-PMH should therefore be preferred.  
-The third option ensures that the metadata is easily processable and can be regularly updated in an automated way.  
+The first option ensures that the metadata is easily processable and can be regularly updated in an automated way.  
+The second option allows to provide metadata compliant with the GoTriple data model without using the OAI-PMH protocol. This solution however hinders automated data acquisition and updates. Using a repository harvestable through OAI-PMH should therefore be preferred.
+The third option does not require any action from the providers if their content is already indexed by the listed aggregators, and if not, requires them to follow the aggregators specific guidelines (see [Aggregators](#aggregators) section).  
   
 The following two sections specify the technical set-up enabling GoTriple to automatically access the metadata and the model that these metadata should follow.
 
 ### Technical set-up
 GoTriple collects data by using the Open Archive Initiative - Protocol for Metadata Harvesting ([OAI-PMH](http://www.openarchives.org/OAI/openarchivesprotocol.html)). The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. The metadata has to be represented according to the [simple DublinCore (DC)](https://www.dublincore.org/specifications/dublin-core/dces/) standard at least, or in a more expressive format, like for instance [qualified DublinCore (QDC)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). DC and QDC can be expressed in XML, HTML, or XHTML files. The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata.   
-The OAI repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [Eprints](https://www.eprints.org/uk/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).   
-A list of open source tools to set up an OAI repository is available on the website of the [Open Archive Initiative](https://www.openarchives.org/pmh/tools/).  
+The OAI-PMH repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [Eprints](https://www.eprints.org/uk/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).   
+A list of open source tools to set up an OAI-PMH repository is available on the website of the [Open Archive Initiative](https://www.openarchives.org/pmh/tools/).  
    
-In the case of content metadata provided through dump files, the metadata should be provided in a standard format. Currently, GoTriple supports the ingestion of metadata structured according to the OpenAIRE and the Europeana formats, see [Aggregators](#aggregators) section for more details.
+In the case of content metadata provided through dump files, the metadata should be provided in a standard format. Currently, GoTriple supports the ingestion of metadata structured according to the OpenAIRE format, see [Aggregators](#aggregators) section for more details.
 
 ### GoTriple data model
 In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects.   
@@ -114,24 +114,24 @@ The TRIPLE data model also contains a few other elements for documents that are 
 
 ## Best practices for contents' visibility
 ### Metadata quality
-While only three metadata elements are technically mandatory on GoTriple, richer metadata improve the processing by the information systems and therefore increases the visibility of the contents. Some of the metadata elements require however more accurate management in order to fully exploit the potentialities of the DublinCore standard. We list below a few hints able to improve the metadata quality in the context of GoTriple, but also in the context of other aggregators, like OpenAIRE, DOAJ, DOAB or BASE.
+While only three metadata elements are technically mandatory on GoTriple, richer metadata improves the processing by the information systems and therefore increases the visibility of the contents. However, some of the metadata elements require more accurate management in order to fully exploit the potentialities of the DublinCore standard. We list below a few hints able to improve the metadata quality in the context of GoTriple, but also in the context of other aggregators, like OpenAIRE, DOAJ, DOAB or BASE.
 
 | Priority | Description | Hints and comments | 
 | :---     |    :----:   | :---     | 
 | Mandatory | Creator of the resource| Can contain one or many creators of the resource and can be individuals or organizations. On GoTriple, person names undergo a normalization process able to improve the filtering. |
-| Mandatory | Identifier of the resource| Can contain one or many identifiers of different types. Identifiers are non semantic strings of characters uniquely identifying a resource. They should belong to a well-known identification system (e.g. ISBN, DOI, handle.net, etc.). <br/>In the digital context, the more important identifier is the Persistent Identifier (PID), which ensures the persistent identification of the resource throughout the various digital locations. Persistent identifiers include among others: DOI from Datacite or Crossref, handles from handle.net.<br/>Identifiers should be provided as HTTP links and can be specified through dedicated encoding schemes accepted by the DC standard (e.g. URI). | 
+| Mandatory | Identifier of the resource| Can contain one or many identifiers of different types. Identifiers are non semantic strings of characters uniquely identifying a resource. They should belong to a well-known identification system (e.g. ISBN, DOI, handle.net, etc.). <br/>In the digital context, the more important identifier is the Persistent Identifier (PID), which ensures the identification of the resource throughout the various digital locations. Persistent identifiers include among others: DOI from Datacite or Crossref, handles from handle.net.<br/>Identifiers should be provided as HTTP links and can be specified through dedicated encoding schemes accepted by the DC standard (e.g. URI). | 
 | Mandatory | Title of the resource | Titles are used for automated enrichments on GoTriple. They shouldn't be or contain a file name. |
 | Recommended | Abstract  | The `dcterms:description` can be more extended than the `dcterms:abstract`, or contain an abstract. On GoTriple, abstracts are used for the automated classification. |
 | Recommended | Access rights to the resource | Note that this information is available only in QDC, simple DC only has the `dc:rights` element. Can contain free text information specifically about the access to the resource. As recommended also by OpenAIRE, it is possible to specify the access type in a normalized way through the [COAR access rights types](https://vocabularies.coar-repositories.org/access_rights/): embargoed access; metadata only access; open access; restricted access. Access information can be complemented with licensing information. |
 | Recommended | Date of publication or creation  | Without more precise information, the `dcterms:date` or `dc:date` element will be interpreted on GoTriple as "resource's first release date". Although the `date` element is normalized on GoTriple, it is preferable to use standardized date formats, like for instance [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). Date or period related not to the resource, but to its content, should be indicated in `dcterms:coverage`. |
 | Recommended | Keywords  | Can contain one or many keywords describing the content of the resource. In DC, the keywords language can be specified using an `xml:lang` attribute. Best practice is to use the ISO norms, for instance the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letters code to identify the language |
 | Recommended | Language of the resource | Describes the language in which the resource is expressed. Like for keywords, best practice is to use the ISO norms, for instance the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letters code. | 
-| Recommended | License | A legal document indicating how the resource can be accessed and used. In QDC, there is a specific element for the licensing information: `dcterms:license`. This element can also contain information about copyright and intellectual property rights.<br/>While a license can be a free text, it is preferable to use standardized licenses: they are easier to understand for humans and can facilitate machine-readability. In the context of open science, especially, it is recommended to use well-spread open licenses, for example [Creative Commons (CC) licenses](https://creativecommons.org/about/cclicenses/). The CC licenses allow to indicate an URL and to indicate the license type in a simple way. ??add list of licenses??|
+| Recommended | License | A legal document indicating how the resource can be accessed and used. In QDC, there is a specific element for the licensing information: `dcterms:license`. This element can also contain information about copyright and intellectual property rights. <br/>While a license can be a free text, it is preferable to use standardized licenses: they are easier to understand for humans and can facilitate machine-readability. In the context of open science, especially, it is recommended to use well-spread open licenses, for example [Creative Commons (CC) licenses](https://creativecommons.org/about/cclicenses/). The CC licenses allow to indicate an URL and to indicate the license type in a simple way. ??TBD add list of licenses??|
 | Recommended | Publisher of the resource | An entity responsible for making the resource available. Can be a person, an organization, like a publishing company or a service, like a data archive. The `publisher` element describes the resource and its production, not the creator and its affiliations. |
 | Recommended | Type of the resource | The type of the resources should refer to a well-spread taxonomy, like the aforementioned [COAR list of types](https://vocabularies.coar-repositories.org/resource_types/), or the subset of COAR types used by GoTriple and listed in [Annexe](#gotriple-list-of-content-types). |
 | Recommended | URL of the landing page | The URL of the landing page can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI scheme.  |
 | Recommended | URL of the resource | Like the URL of the landing page, the URL of the resource itself can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI encoding scheme. In GoTriple, the URLs listed in the `identifier` elements containing a .pdf extension are used to create the direct link to the full text.  |
-| Recommended | URL of the source | A related resource from which the described resource is derived. In GoTriple, `dcterms:source`and `dc:source` elements are used to refer to the publishing platform or data repository. |
+| Recommended | URL of the source | A related resource from which the described resource is derived. In GoTriple, `dcterms:source` and `dc:source` elements are used to refer to the publishing platform or data repository. |
 | Optional | Contributor to the resource’s creation | An entity responsible for making contributions to the resource. Other than the entities that have contributed to the creation of the resource (e.g. a data scientist for a dataset, an editor for a publication), the `contributor` element can be used to list the organizations that have made the creation possible. |
 | Optional | Format of the resource | The file format, physical medium, or dimensions of the resource. Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of [MIME Internet media types](https://www.iana.org/assignments/media-types/media-types.xhtml)|
 | Optional | Information on the source | This element is used for instance to indicate the relation of an article with a specific journal issue. |
@@ -156,7 +156,7 @@ The **Reusability** principle relies on clear licensing information, as liberal 
 The TRIPLE data model follows the main aspects of the FAIR principles and this handbook will help you to ensure that your content is Findable, Accessible, Interoperable, and Reusable.
 
 ### Aggregators 
-GoTriple harvests metadata from major European aggregators and the TRIPLE data model is globally compliant with their own data models. Your content can therefore appear on GoTriple if it is already indexed by our current partner aggregators: DOAB, DOAJ, Isidore and OpenAIRE. Furthermore, if the content provider doesn't have an OAI repository, GoTriple can ingest metadata files formatted according to the ??OpenAIRE guidelines??.<br/>   
+GoTriple harvests metadata from major European aggregators and the TRIPLE data model is globally compliant with their own data models. Your content can therefore appear on GoTriple if it is already indexed by our current partner aggregators: DOAB, DOAJ, Isidore and OpenAIRE. Furthermore, if the content provider doesn't have an OAI-PMH repository, GoTriple can ingest metadata files formatted according to the OpenAIRE model (TBD ANNEXE TO ADD).<br/>   
 However, with respect to the TRIPLE data model, each aggregator may have additional requirements. We list below some information about these requirements for the main aggregators that are useful for the SSH research community, including aggregators that are not harvested yet by GoTriple (BASE and Europeana).  
 
 - [BASE](https://www.base-search.net/).  
@@ -242,11 +242,11 @@ Checking if the provider already has an OAI-PMH repository available.
 If not, checking if the OAI-PMH repository can be easily activated or installed.
 - **Interoperability**  
 Checking if the metadata is available at least in the simple DC standard.  
-??If not, if it can be formatted according to the simple DC standard.  
-If not, if it can be formatted according to the OpenAIRE guidelines.??  
+If not, if it can be formatted according to the OpenAIRE model as used on GoTriple.  
 - **Acquisition**  
-Acquisition of the contents through the OAI-PMH and the DC standard.  
-If not possible, acquisition of the contents through a DC or OpenAIRE formatted file.  
+The provider selects the sets dedicated to SSH resources.
+GoTriple harvests the contents through the OAI-PMH and the DC standard.  
+If not possible, acquisition of the contents through an OpenAIRE formatted file.  
 - **Validation**  
 Checking through the providers' dashboard that the content has been correctly ingested.   
 
