@@ -71,7 +71,7 @@ In the case of content metadata provided through dump files, the metadata should
 
 ### GoTriple data model
 In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects.   
-When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified. When metadata is collected through formatted files, it is possible to use other schemas. Thanks to various mappings between metadata standards, the TRIPLE data model can handle other major standards well-spread in the SSH community, like OpenAIRE metadata format or Europeana Data Metadata (EDM) format.
+When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified. When metadata is collected through formatted files, it is possible to use other schemas, like the aforementioned OpenAIRE format. Thanks to various mappings between metadata standards, the TRIPLE data model can handle other major standards well-spread in the SSH community, like OpenAIRE metadata format or Europeana Data Metadata (EDM) format.
 
 Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding tag elements in simple DC and QDC, and their expression in the TRIPLE data model.  
    
