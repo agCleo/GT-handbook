@@ -52,7 +52,7 @@ As for the **datasets**, they are a set of organized research data. In the conte
 In order to have their contents collected by GoTriple, the providers essentially have to respect two requirements: providing an *access to their metadata* and providing *metadata compliant* with the platform's data model.  
   
 The providers can have their contents indexed on GoTriple in three ways:
-- by following the GoTriple recommendations for the technical set-up and the data model, i.e. using the OAI protocol and the DC metadata standard.
+- by following the GoTriple recommendations for the technical set-up and the data model, i.e. using the OAI-PMH protocol and the DC metadata standard.
 - by sending a metadata file to the GoTriple administrators formatted according to the OpenAIRE format (see [Annexe](#openaire-json-file-format)).
 - by having their contents on one of the aggregators of GoTriple (currently: [DOAB](https://www.doabooks.org/en), [DOAJ](https://doaj.org/), [Isidore](https://isidore.science/) and [OpenAIRE](https://www.openaire.eu/)): in this case, the content will be automatically collected by GoTriple.
 
