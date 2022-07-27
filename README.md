@@ -53,25 +53,26 @@ In order to have their contents collected by GoTriple, the providers essentially
   
 The providers can have their contents indexed on GoTriple in three ways:
 - by following the GoTriple recommendations for the technical set-up and the data model, i.e. using the OAI protocol and the DC metadata standard.
-- by sending a metadata file to the GoTriple administrators formatted according to the OpenAIRE format used by GoTriple (TBD ANNEXE TO ADD).
+- by sending a metadata file to the GoTriple administrators formatted according to the OpenAIRE format (see [Annexe](#openaire-json-file-format)).
 - by having their contents on one of the aggregators of GoTriple (currently: [DOAB](https://www.doabooks.org/en), [DOAJ](https://doaj.org/), [Isidore](https://isidore.science/) and [OpenAIRE](https://www.openaire.eu/)): in this case, the content will be automatically collected by GoTriple.
 
 The first option ensures that the metadata is easily processable and can be regularly updated in an automated way.  
-The second option allows to provide metadata compliant with the GoTriple data model without using the OAI-PMH protocol. This solution however hinders automated data acquisition and updates. In this case, the publisher must periodically provide to GoTriple administrators a file export of their publications’ metadata in the OpenAIRE format. The import procedure is not therefore completely automated and needs a certain number of human interactions. It is requested to provide at least two full export files per year per publisher via some file transfer method (http, ftp, cloud sharing, etc).
+The second option allows to provide metadata compliant with the GoTriple data model without using the OAI-PMH protocol. This solution however hinders automated data acquisition and updates. 
 The third option does not require any action from the providers if their content is already indexed by the listed aggregators, and if not, requires them to follow the aggregators specific guidelines (see [Aggregators](#aggregators) section).  
   
 The following two sections specify the technical set-up enabling GoTriple to automatically access the metadata and the model that these metadata should follow.
 
 ### Technical set-up
-GoTriple collects data by using the Open Archive Initiative - Protocol for Metadata Harvesting ([OAI-PMH](http://www.openarchives.org/OAI/openarchivesprotocol.html)). The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. The metadata has to be represented according to the [simple DublinCore (DC)](https://www.dublincore.org/specifications/dublin-core/dces/) standard at least, or in a more expressive format, like for instance [qualified DublinCore (QDC)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). DC and QDC can be expressed in XML, HTML, or XHTML files, although GoTriple only collects DC in XML format. The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata.   
+GoTriple collects data by using the Open Archive Initiative - Protocol for Metadata Harvesting ([OAI-PMH](http://www.openarchives.org/OAI/openarchivesprotocol.html)). The OAI-PMH protocol was developed in 1999 as part of the Open Archives Initiative. It allows content providers to expose their metadata on the Web in a structured format and to make it available for harvesters. The repository is set-up by the provider and contains sets of metadata. 
+The metadata has to be represented according to the simple DublinCore (DC) standard at least, which uses dc elements that are described in the [Dublin Core Metadata Element Set](https://www.dublincore.org/specifications/dublin-core/dces/). A richer version of DC also exists,  which uses dcterms elements and is described in the [DCMI Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/). This version contains simple DC and qualified DC. The OAI-PMH allows harvesters like GoTriple to then collect the structured metadata. DC and QDC can be expressed in XML, HTML, or XHTML files, although GoTriple only collects `dc` and `dcterms` elements in XML format. GoTriple also has an experimental support of harvesting OAI-PMH endpoints that expose metadata according to the Europeana Data Model (EDM).   
 The OAI-PMH repository can be set up by the content provider with little development investment. Some tools and services for data repositories or publishers can contain an OAI-PMH module, either as a built-in feature or a plugin (e.g. [DSpace](https://duraspace.org/dspace/resources/technical-specifications/), [Eprints](https://www.eprints.org/uk/), [OJS](https://docs.pkp.sfu.ca/learning-ojs/en/settings-distribution#access)).   
 A list of open source tools to set up an OAI-PMH repository is available on the website of the [Open Archive Initiative](https://www.openarchives.org/pmh/tools/).  
    
-In the case of content metadata provided through dump files, the metadata should be provided in a standard format. Currently, GoTriple supports the ingestion of metadata structured according to the OpenAIRE format, see [Aggregators](#aggregators) section for more details.
+In the case of metadata provided through dedicated files, the publisher must periodically provide to GoTriple administrators a file export of their publications’ metadata in the OpenAIRE format (see [Annexe](#openaire-json-file-format)). The import procedure is not therefore completely automated and needs a certain number of human interactions. It is requested to provide at least two full export files per year per publisher via some file transfer method (http, ftp, cloud sharing, etc).
 
 ### GoTriple data model
 In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects.   
-When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified. When metadata is collected through formatted files, it is possible to use other schemas, like the aforementioned OpenAIRE format. Thanks to various mappings between metadata standards, the TRIPLE data model can handle other major standards well-spread in the SSH community, like OpenAIRE metadata format or Europeana Data Metadata (EDM) format.
+When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified. When metadata is collected through formatted files, it is possible to use other schemas, like the aforementioned OpenAIRE format or the Europeana Data Metadata (EDM) format (currently in testing).
 
 Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding tag elements in simple DC and QDC, and their expression in the TRIPLE data model.  
    
@@ -323,5 +324,7 @@ On GoTriple, a publication is a textual object formatted for dissemination and p
 - thesis ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_46ec/))
 - map ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_12cd/))
 - other ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_1843/))
+
+### OpenAIRE JSON file format
 
 
