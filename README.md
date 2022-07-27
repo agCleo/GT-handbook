@@ -1,5 +1,5 @@
 
-***DRAFT V0.3***
+***DRAFT V0.4***
 -----
 
 # GoTriple Content Providers Handbook 
@@ -263,19 +263,6 @@ The content provider can propose one or more content sources.
 The GoTriple administrator controls the proposed content sources and validates them.  
 The content provider can always see the proposed sources but cannot modify those that have been approved.  
 If the sources should be modified, it is necessary to contact the GoTriple administrator at (TBC).   
-   
-
----
-DRAFT
-## Process 
-### Architecture
-### Quality control
-### Enrichment
-
-## Support for the providers
-### Dashboard
-### Terms of Agreement
----
 
 ## Credits
 The GoTriple platform and this handbook have been created through the project [TRIPLE](https://project.gotriple.eu/gotriple-platform/) (Transforming Research Through Innovative
@@ -326,6 +313,31 @@ On GoTriple, a publication is a textual object formatted for dissemination and p
 - other ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_1843/))
 
 ### OpenAIRE JSON file format
+
+The OpenAIRE JSON schemas for publications are available here https://zenodo.org/record/5799514#.YtAAYOxBw40.   
+In GoTriple we only consider  the following  subset of elements, which must be included in the dump produced for the import in our platform:  
+
+| Description | JSON schema | Triple data model | 
+| :---     |  :---      | :----: | 
+| Creator of the resource| author/fullname| schema:author |
+| Identifier of the resource| id | schema:identifier |
+| Title of the resource| maintitle| schema:headline |
+| Abstract  | description | schema:abstract |
+| Access rights to the resource | bestaccessright/label |schema:conditionsOfAccess |
+| Date of publication or creation  | publicationdate | schema:datePublished |
+| Keywords  | subjects/subject/value (Only if subjects/subject/scheme=keyword ) | schema:keywords |
+| Language of the resource | language/code | schema:inLanguage | 
+| License | instance/license | schema:license |
+| Publisher of the resource | publisher | schema:publisher |
+| Type of the resource | instance/type | schema:additionalType |
+| URL of the landing page | instance/url (it must start with http and must not end with .pdf) | schema:mainEntityOfPage |
+| URL of the resource | instance/url (it must start with http and end with .pdf) | schema:url |
+| URL of the source (e.g. URL of a publishing platform) | we consider the elements (one suffices): <br/>originalId (it must start with http) <br/>instance/url (it must start with http) <br/>collectedfrom/key (it must start with http) <br/>instance/collectedfrom/key(it must start with http) <br/>instance/hostedby/key (it must start with http) | schema:isBasedOnURL |
+| Contributor to the resource’s creation | contributor | schema:contributor |
+| Format of the resource | format| schema:encodingFormat |
+| Information on the source (e.g. journal issue) | we consider the elements (one suffices): <br/>originalId (it must not start with http) <br/>instance/url (it must not start with http) <br/>collectedfrom/key (it must not start with http) <br/>instance/collectedfrom/key (it must not start with http) <br/>instance/hostedby/key (it must not start with http) | schema:mentions |
+| Temporal coverage of the resource | null | schema:temporalCoverage |
+| Spatial coverage of the resource | coverage | schema:spatialCoverage |
 
 ### List of licenses supported on GoTriple
 
