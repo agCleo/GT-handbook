@@ -74,7 +74,7 @@ In the case of metadata provided through dedicated files, the publisher must per
 In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects.   
 When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified, ie using `dc` or `dcterms` elements. When metadata is collected through formatted files, it is possible to use other schemas, like the aforementioned OpenAIRE format or the Europeana Data Metadata (EDM) format (currently in testing).
 
-Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding tag elements in simple DC and QDC, and their expression in the TRIPLE data model.  
+Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding `dc` and `dcterms` elements, and their expression in the TRIPLE data model.  
    
    
 | Priority | Description | DublinCore | Triple data model | 
@@ -83,11 +83,11 @@ Below, we describe the current TRIPLE data model for documents, specifying the l
 | Mandatory | Identifier of the resource| dcterms:identifier, dc:identifier | schema:identifier |
 | Mandatory | Title of the resource| dcterms:title, dc:title| schema:headline |
 | Recommended | Abstract  | dcterms:description, dc:description, dcterms:abstract | schema:abstract |
-| Recommended | Access rights to the resource | dcterms:accessRights |schema:conditionsOfAccess |
+| Recommended | Access rights to the resource | dcterms:rights, dc:rights |schema:conditionsOfAccess |
 | Recommended | Date of publication or creation  | dcterms:date, dc:date, dcterms:issued, dcterms:created, dcterms:available | schema:datePublished |
 | Recommended | Keywords  | dcterms:subject, dc:subject | schema:keywords |
 | Recommended | Language of the resource | dcterms:language, dc:language | schema:inLanguage | 
-| Recommended | License | dcterms:rights, dc:rights | schema:license |
+| Recommended | License | dcterms:license OR dcterms:rights, dc:rights | schema:license |
 | Recommended | Publisher of the resource | dcterms:publisher, dc:publisher | schema:publisher |
 | Recommended | Type of the resource | dcterms:type, dc:type | schema:additionalType |
 | Recommended | URL of the landing page | dcterms:identifier  dc:identifier | schema:mainEntityOfPage |
@@ -95,7 +95,7 @@ Below, we describe the current TRIPLE data model for documents, specifying the l
 | Recommended | URL of the source (e.g. URL of a publishing platform) | dcterms:source, dc:source | schema:isBasedOnURL |
 | Optional | Contributor to the resource’s creation | dcterms:contributor, dc:contributor | schema:contributor |
 | Optional | Format of the resource | dcterms:format, dc:format| schema:encodingFormat |
-| Optional | Information on the source (e.g. journal issue) | dcterms:relation, dc:relation | schema:mentions |
+| Optional | Information on the source (e.g. journal issue) | dcterms:source, dc:source | schema:mentions |
 | Optional | Temporal coverage of the resource | dc:coverage, dcterms:coverage | schema:temporalCoverage |
 | Optional | Spatial coverage of the resource | dcterms:spatial | schema:spatialCoverage |
 
@@ -122,12 +122,12 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 | Mandatory | Creator of the resource| Can contain one or many creators of the resource and can be individuals or organizations. On GoTriple, person names undergo a normalization process able to improve the filtering. |
 | Mandatory | Identifier of the resource| Can contain one or many identifiers of different types. Identifiers are non semantic strings of characters uniquely identifying a resource. They should belong to a well-known identification system (e.g. ISBN, DOI, handle.net, etc.). <br/>In the digital context, the more important identifier is the Persistent Identifier (PID), which ensures the identification of the resource throughout the various digital locations. Persistent identifiers include among others: DOI from Datacite or Crossref, handles from handle.net.<br/>Identifiers should be provided as HTTP links and can be specified through dedicated encoding schemes accepted by the DC standard (e.g. URI). | 
 | Mandatory | Title of the resource | Titles are used for automated enrichments on GoTriple. They shouldn't be or contain a file name. |
-| Recommended | Abstract  | The `dcterms:description` can be more extended than the `dcterms:abstract`, or contain an abstract. On GoTriple, abstracts are used for the automated classification. |
-| Recommended | Access rights to the resource | Note that this information is available only in QDC, simple DC only has the `dc:rights` element. Can contain free text information specifically about the access to the resource. As recommended also by OpenAIRE, it is possible to specify the access type in a normalized way through the [COAR access rights types](https://vocabularies.coar-repositories.org/access_rights/): embargoed access; metadata only access; open access; restricted access. Access information can be complemented with licensing information. |
+| Recommended | Abstract  | The `dcterms:description` can be more extended than the `dcterms:abstract`, or contain an abstract. On GoTriple, abstracts are used for the automated semantic classification and annotation. |
+| Recommended | Access rights to the resource | Note that this information is available only in `dcterms`, simple DC only has the `dc:rights` element. Can contain free text information specifically about the access to the resource. As recommended also by OpenAIRE, it is possible to specify the access type in a normalized way through the [COAR access rights types](https://vocabularies.coar-repositories.org/access_rights/): embargoed access; metadata only access; open access; restricted access. Access information can be complemented with licensing information. |
 | Recommended | Date of publication or creation  | Without more precise information, the `dcterms:date` or `dc:date` element will be interpreted on GoTriple as "resource's first release date". Although the `date` element is normalized on GoTriple, it is preferable to use standardized date formats, like for instance [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). Date or period related not to the resource, but to its content, should be indicated in `dcterms:coverage`. |
-| Recommended | Keywords  | Can contain one or many keywords describing the content of the resource. In DC, the keywords language can be specified using an `xml:lang` attribute. Best practice is to use the ISO norms, for instance the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letters code to identify the language |
-| Recommended | Language of the resource | Describes the language in which the resource is expressed. Like for keywords, best practice is to use the ISO norms, for instance the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letters code. | 
-| Recommended | License | A legal document indicating how the resource can be accessed and used. In QDC, there is a specific element for the licensing information: `dcterms:license`. This element can also contain information about copyright and intellectual property rights. <br/>While a license can be a free text, it is preferable to use standardized licenses: they are easier to understand for humans and can facilitate machine-readability. In the context of open science, especially, it is recommended to use well-spread open licenses, for example [Creative Commons (CC) licenses](https://creativecommons.org/about/cclicenses/). The CC licenses allow to indicate an URL and to indicate the license type in a simple way. ??TBD add list of licenses??|
+| Recommended | Keywords  | Can contain one or many keywords describing the content of the resource. In DC, the keywords language can be specified using an xml:lang attribute. The [XML](https://www.w3.org/TR/xml/#sec-lang-tag) specification prescribes the usage of language identifiers as defined by [IETF BCP 47](https://www.w3.org/TR/xml/#RFC1766) for values of this attribute. In the context of GoTriple it is mandatory to usegeneral,  using  the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter code. |
+| Recommended | Language of the resource | Describes the language in which the resource is expressed. Like for keywords, for GoTriple, it is mandatory to use the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letters code. | 
+| Recommended | License | A legal document indicating how the resource can be accessed and used. In QDC, there is a specific element for the licensing information: `dcterms:license`, but it is also possible to use `dcterms:rights`, `dc:rights` as an alternative. This element can also contain information about copyright and intellectual property rights. <br/>While a license can be a free text, it is preferable to use standardized licenses: they are easier to understand for humans and can facilitate machine-readability. In the context of open science, especially, it is recommended to use well-spread open licenses, for example [Creative Commons (CC) licenses](https://creativecommons.org/about/cclicenses/). The CC licenses allow to indicate an URL and to indicate the license type in a simple way. See the list of licenses supported by GoTriple in [Annexe]().|
 | Recommended | Publisher of the resource | An entity responsible for making the resource available. Can be a person, an organization, like a publishing company or a service, like a data archive. The `publisher` element describes the resource and its production, not the creator and its affiliations. |
 | Recommended | Type of the resource | The type of the resources should refer to a well-spread taxonomy, like the aforementioned [COAR list of types](https://vocabularies.coar-repositories.org/resource_types/), or the subset of COAR types used by GoTriple and listed in [Annexe](#gotriple-list-of-content-types). |
 | Recommended | URL of the landing page | The URL of the landing page can be indicated as a specific `dcterms:identifier` or `dc:identifier` element using the URI scheme.  |
@@ -142,7 +142,7 @@ While only three metadata elements are technically mandatory on GoTriple, richer
 ### FAIR principles
 The FAIR principles emerged in 2016 from an interdisciplinary group of research data experts. The acronym FAIR refers to four guiding principles for digital data management: making the data Findable, Accessible, Interoperable, and Reusable. The FAIR principles address the need for a common understanding of data management good practices able to facilitate data sharing and reuse. Although the principles mainly consider technical aspects, they allow, as principles, to adapt the concrete implementations to specific contexts. In particular, they can apply to any research digital object: datasets, publications, software, etc.<br/>
 
-The four ground principles are further described in a set of fifteen principles. [GOFAIR](https://www.go-fair.org), the organisation supporting the FAIR principles adoption, gives detailed information about [the fifteen FAIR principles](https://www.go-fair.org/fair-principles/). The OPERAS Special Interest Group on "Common standards and FAIR principles" also provided an overview in its [2021 White paper](https://www.operas-eu.org/special-interest-group-living-book/operas-common-standards-white-paper-june-2021/#Common-Standards-2021-FAIR).<br/>
+The four ground principles are further described in a set of fifteen principles. [GOFAIR](https://www.go-fair.org), the organization supporting the FAIR principles adoption, gives detailed information about [the fifteen FAIR principles](https://www.go-fair.org/fair-principles/). The OPERAS Special Interest Group on "Common standards and FAIR principles" also provided an overview in its [2021 White paper](https://www.operas-eu.org/special-interest-group-living-book/operas-common-standards-white-paper-june-2021/#Common-Standards-2021-FAIR).<br/>
 
 The FAIR principles are a useful tool to manage digital data in a way that facilitates both human and machine operations. They have been used to build the TRIPLE data model and are now at the core of all major aggregators practices.  
   
@@ -249,7 +249,7 @@ The provider selects the sets dedicated to SSH resources.
 GoTriple harvests the contents through the OAI-PMH and the DC standard.  
 If not possible, acquisition of the contents through an OpenAIRE formatted file.  
 - **Validation**  
-Checking through the providers' dashboard that the content has been correctly ingested.   
+Checking through the TRIPLE administrator's dashboard that the content has been correctly ingested and that metadata have been correctly detected. If this is the case, the providers’ data is imported in the GoTriple index.  
 
 ### Content provider's dashboard
 This workflow will occur through the content provider's space. Upon the content provider's registration, this space will allow the content provider to communicate with the GoTriple administrators and follow the harvesting of the data.  
@@ -285,7 +285,7 @@ TRIPLE has received funding from the European Union’s Horizon 2020 Research an
 ## Annexe
 ### Glossary
 **Aggregator**  
-An organisation that collects, manages, and disseminates the metadata of the scholarly resources’ made available by various providers. The aggregator operates as a standardisation body of heterogeneous metadata, either by defining its own requirements, or by relying on existing standards for harvesting and dissemination.
+An organization that collects, manages, and disseminates the metadata of the scholarly resources’ made available by various providers. The aggregator operates as a standardisation body of heterogeneous metadata, either by defining its own requirements, or by relying on existing standards for harvesting and dissemination.
 
 **Core pipeline**  
 The back-end system of the TRIPLE infrastructure that takes care of acquiring, normalising and semantically enriching data from multiple sources. 
@@ -300,7 +300,7 @@ Refers to the information asset related to a specific digital object; it is used
 In the context of OAI-PMH, the Open Archive Initiative - Protocol for Metadata Harvesting, a harvester is the entity collecting automatically metadata exposed in an OAI-PMH repository. Harvesters can collect metadata from many providers, in which case the harvesters can be defined as aggregators.
 
 **Provider**  
-An organisation that manages, collects, and disseminates scholarly resources. It operates as the manager of one or various data repositories, archives, or publishing platforms. A provider enriches the data it is responsible for with metadata facilitating its dissemination, and acts as the primary dissemination body of the data and its metadata.
+An organization that manages, collects, and disseminates scholarly resources. It operates as the manager of one or various data repositories, archives, or publishing platforms. A provider enriches the data it is responsible for with metadata facilitating its dissemination, and acts as the primary dissemination body of the data and its metadata.
 
 **Publication**
 On GoTriple, a publication is a textual object formatted for dissemination and produced in the context of research. A publication can be of various types (article, book, report, training, etc.) and formats (pdf, epub, presentation, etc.). 
@@ -326,5 +326,7 @@ On GoTriple, a publication is a textual object formatted for dissemination and p
 - other ([COAR type](https://vocabularies.coar-repositories.org/resource_types/c_1843/))
 
 ### OpenAIRE JSON file format
+
+### List of licenses supported on GoTriple
 
 
