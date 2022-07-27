@@ -340,5 +340,17 @@ In GoTriple we only consider  the following  subset of elements, which must be i
 | Spatial coverage of the resource | coverage | schema:spatialCoverage |
 
 ### List of licenses supported on GoTriple
+GoTriple will provide normalization for a a limited set of widely used set of licenses.
+Here is the list of the supported licenses:
+- Cairn 
+- Creative Commons 
+- OpenSource licenses (including apache, gpl, bsd, mit licence)
+- CLARIN PUB, CLARIN ACA, CLARIN ACA-NC, CLARIN-RES, CLARIN RES-NC
+- Microsoft Public Licence
+- Microsoft Reciprocal Licence
+- Open Data (ODbL, Open Data Commons Open Database Licence)
+- META-SHARE No Redistribution, META-SHARE NonCommercial NoRedistribution, META-SHARE Commercial No Redistribution For a Fee, META-SHARE Noncommercial No Redistribution For a Fee
+- ELRA licenses
+- other licenses will be marked as "other" if not recognized, or "undefined" if the license is not specified
 
 
