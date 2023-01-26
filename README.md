@@ -15,8 +15,13 @@
 <br>[4.2 FAIR principles](#fair-principles)
 <br>[4.3 Aggregators](#aggregators)
 <br>[**5. Process and Support**](#process-and-support)
-<br>[5.1 Content acquisition main steps](#content-acquisition-main-steps)
-<br>[5.2 Content provider's dashboard](#content-providers-dashboard)
+<br>[**6. Credits**](#credits)
+<br>[**7. Annexe**](#annexe)
+<br>[Glossary](#glossary)
+<br>[GoTriple content types](#gotriple-list-of-content-types)
+<br>[Licenses supported on GoTriple](#list-of-licenses-supported-on-gotriple)
+<br>[Sample metadata files](#sample-metadata-files)
+<br>[OpenAIRE JSON file format](#openaire-json-file-format)
 
 ## Purpose of this document
 [GoTriple](https://www.gotriple.eu/) is a discovery service for scientific outputs in the Social Sciences and Humanities area. It is one of the services of the European Research Infrastructure [OPERAS](https://www.operas-eu.org/).   
@@ -72,7 +77,7 @@ In the case of metadata provided through dedicated files, the publisher must per
 
 ### GoTriple data model
 In order to ensure high semantic expressivity and address flexibility needs, the TRIPLE data model is based on the [schema.org](https://schema.org/) ontology, which is maintained by a [World Wide Web Consortium (W3C) community](https://www.w3.org/community/schemaorg/). The ontology allows to handle the metadata of documents, but also of profiles and projects.   
-When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified, ie using `dc` or `dcterms` elements. When metadata is collected through formatted files, it is possible to use other schemas, like the aforementioned OpenAIRE format (see [Annexe](#openaire-json-file-format)).
+When it is collected through OAI-PMH, the metadata of the documents need to be compliant with DublinCore, simple or qualified, ie using `dc` or `dcterms` elements. When metadata is collected through formatted files, it is possible to use other schemas, like the aforementioned OpenAIRE format. Examples of the file both in DC and in OpenAIRE format are reproduced in [Annexe](#sample-metadata-files)).
 
 Below, we describe the current TRIPLE data model for documents, specifying the level of priority, the corresponding `dc` and `dcterms` elements, and their expression in the TRIPLE data model.  
    
@@ -220,7 +225,7 @@ Providers fulfilling the GoTriple prerequisites, i.e. having installed an OAI-PM
 The HMS allows you to register as a GoTriple data provider, indicating your institution and your OAI-PMH URL, to interact with the GoTriple admin team, and to follow the harvesting process of your contents.    
 
 ### Data dumps ingestion
-The data providers who would like to send database dumps structured according to the OpenAIRE format should follow the recommendations about the OpenAIRE JSON format in [Annexe](#openaire-json-file-format) and contact the GoTriple admin team via helpdesk@operas-eu.org. 
+The data providers who would like to send database dumps structured according to the OpenAIRE format should follow the recommendations about the OpenAIRE JSON format in [Annexe](#openaire-json-file-format) and contact the GoTriple admin team by clicking the "Report an issue" button at the bottom left of the GoTriple home page (https://www.gotriple.eu/). 
 
 ## Credits
 The GoTriple platform and this handbook have been created through the project [TRIPLE](https://project.gotriple.eu/gotriple-platform/) (Transforming Research Through Innovative
@@ -284,10 +289,202 @@ Here is the list of the supported licenses:
 - ELRA licenses
 - other licenses will be marked as "other" if not recognized, or "undefined" if the license is not specified  
 
+### Sample metadata files
+
+Below are displayed two examples of the files used on the GoTriple platform: one in the XML Dublin Core format, one in the JSON OpenAIRE format.  
+
+XML DC example:  
+```
+<record>
+	<header
+		xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<identifier>oai:doaj.org/article:eebc19b7f56c4c439b316061bffd423d</identifier>
+		<datestamp>2022-12-21T23:20:41Z</datestamp>
+		<setSpec>TENDOkhpc3Rvcnkgb2Ygc2Nob2xhcnNoaXAgYW5kIGxlYXJuaW5nLiBUaGUgaHVtYW5pdGllcw~~</setSpec>
+		<setSpec>TENDOkVsZWN0cm9uaWMgY29tcHV0ZXJzLiBDb21wdXRlciBzY2llbmNl</setSpec>
+	</header>
+	<metadata
+		xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+			<dc:title>Asymmetric Digital Collaboration and Collective Authorship: On Digital Genres and Writing Processes for 'CanLit Guides'</dc:title>
+			<dc:identifier>1918-3666</dc:identifier>
+			<dc:identifier>10.16995/dscn.28</dc:identifier>
+			<dc:identifier>https://doaj.org/article/eebc19b7f56c4c439b316061bffd423d</dc:identifier>
+			<dc:date>2016-03-01T00:00:00Z</dc:date>
+			<dc:relation>https://www.digitalstudies.org//articles/28</dc:relation>
+			<dc:relation>https://doaj.org/toc/1918-3666</dc:relation>
+			<dc:description>This paper discusses the unique asymmetric collaboration process used at CanLit Guides in the first phase of its development. CanLit Guides began as a project to mobilize the massive digital archive (1959-2008) of the scholarly journal Canadian Literature. The Guides introduce undergraduate students to areas of scholarly and critical concern in the larger field of Canadian Literature and culture. The editors of Canadian Literature enabled graduate students to develop teamwork, research, teaching, and digital writing skills by employing them as developers, researchers, and writers. The project supports open access, scholarly collaboration, and the creation of new digital genres. As the project evolved, however, it became clear that getting a team of scholars to work on a hierarchized, or what we call "asymmetric," collaboration between the editors and the graduate students, is particularly difficult, and can lead to issues of doneness and sprawl. Producing a collaborative and democratic workflow process enabled us to write a robust collection of guides in innovative digital genres. This paper pays particular attention to issues of authorship that come up with any collaborative digital writing project, and it discusses the complexities of the graduate student experience of working on a digital pedagogical development team.   Cet article discute du processus unique de collaboration asymétrique qui a été utilisé dans les guides sur la littérature canadienne ('CanLit Guides') au cours du premier stade de leur développement. Les guides CanLit ont débuté comme projet visant à mobiliser les archives numériques massives (1959-2008) du journal érudit de la littérature canadienne. Les guides initient les étudiants de premier cycle à des domaines de préoccupation universitaire et critique dans le champ plus large de la littérature et de la culture canadienne. Les rédacteurs de Littérature canadienne ont permis aux étudiants diplômés de développer leurs aptitudes de travail en équipe, de recherche, d'enseignement et de rédaction numérique, en les employant comme développeurs, chercheurs et rédacteurs. Le projet soutient l'accès ouvert, la collaboration universitaire et la création de nouveaux genres numériques. Cependant, à mesure que le projet a évolué, il est devenu clair qu'il était particulièrement difficile d'obtenir d'une équipe d'universitaires qu'ils travaillent en collaboration hiérarchisée, ou ce que nous appelons asymétrique, entre les rédacteurs et les étudiants diplômés, et que cela peut mener à des problèmes de finesse et d'étalement. La production d'un processus de flux de travail collaboratif et démocratique nous a permis de rédiger une collection robuste de guides dans des genres numériques innovateurs. Cet article porte une attention particulière aux problèmes de la paternité des œuvres qui surgissent lors de tout projet de rédaction numérique en collaboration, et discute des complexités de l'expérience des étudiants diplômés à travailler au sein d'une équipe de développement pédagogique numérique.</dc:description>
+			<dc:creator>Mike Borkent</dc:creator>
+			<dc:creator>Jamie Paris</dc:creator>
+			<dc:publisher>Open Library of Humanities</dc:publisher>
+			<dc:type>article</dc:type>
+			<dc:subject>CanLit Guides, workflow, digital genres, digital pedagogical project, collaboration, authorship, literature and culture</dc:subject>
+			<dc:subject xsi:type="dcterms:LCC">History of scholarship and learning. The humanities</dc:subject>
+			<dc:subject xsi:type="dcterms:LCC">AZ20-999</dc:subject>
+			<dc:subject xsi:type="dcterms:LCC">Electronic computers. Computer science</dc:subject>
+			<dc:subject xsi:type="dcterms:LCC">QA75.5-76.95</dc:subject>
+			<dc:language>EN</dc:language>
+			<dc:rights>OPEN</dc:rights>
+			<dcterms:license>cc-by</dcterms:license>
+			<dcterms:temporal>1999-01-01</dcterms:temporal>
+			<dcterms:spatial>France</dcterms:spatial>
+			<dc:source>Digital Studies (2016)</dc:source>
+			<dcterms:contributor>Bureau Interdisciplinaire Landschapsanalyse</dcterms:contributor>
+			<dcterms:format>application/pdf</dcterms:format>
+		</oai_dc:dc>
+	</metadata>
+</record>
+```
+  
+     
+JSON OpenAIRE example:
+```
+{
+  "author": [
+    {
+      "fullname": "Mike Borkent"
+    },
+    {
+      "fullname": "Jamie Paris"
+    }
+  ],
+  "bestaccessright": {
+    "label": "OPEN"
+  },
+  "collectedfrom": [
+    {
+      "key": "10|driver______::bee53aa31dc2cbb538c10c2b65fa5824"
+    },
+    {
+      "key": "10|openaire____::081b82f96300b6a6e3d282bad31cb6e2"
+    },
+    {
+      "key": "10|openaire____::8ac8380272269217cb09a928c8caa993"
+    },
+    {
+      "key": "10|openaire____::5f532a3fc4f1ea403f37070f59a7a53a"
+    }
+  ],
+  "contributor": [
+    "Bureau Interdisciplinaire Landschapsanalyse"
+  ],
+  "coverage": [
+    "1999-01-01"
+  ],
+  "dateofcollection": "2022-12-21T23:20:41Z",
+  "description": [
+    "This paper discusses the unique asymmetric collaboration process used at CanLit Guides in the first phase of its development. CanLit Guides began as a project to mobilize the massive digital archive (1959-2008) of the scholarly journal Canadian Literature. The Guides introduce undergraduate students to areas of scholarly and critical concern in the larger field of Canadian Literature and culture. The editors of Canadian Literature enabled graduate students to develop teamwork, research, teaching, and digital writing skills by employing them as developers, researchers, and writers. The project supports open access, scholarly collaboration, and the creation of new digital genres. As the project evolved, however, it became clear that getting a team of scholars to work on a hierarchized, or what we call \"asymmetric,\" collaboration between the editors and the graduate students, is particularly difficult, and can lead to issues of doneness and sprawl. Producing a collaborative and democratic workflow process enabled us to write a robust collection of guides in innovative digital genres. This paper pays particular attention to issues of authorship that come up with any collaborative digital writing project, and it discusses the complexities of the graduate student experience of working on a digital pedagogical development team.    Cet article discute du processus unique de collaboration asymetrique qui a ete utilise dans les guides sur la litterature canadienne ( CanLit Guides ) au cours du premier stade de leur developpement. Les guides CanLit ont debute comme projet visant a mobiliser les archives numeriques massives (1959-2008) du journal erudit de la litterature canadienne. Les guides initient les etudiants de premier cycle a des domaines de preoccupation universitaire et critique dans le champ plus large de la litterature et de la culture canadienne. Les redacteurs de Litterature canadienne ont permis aux etudiants diplomes de developper leurs aptitudes de travail en equipe, de recherche, d'enseignement et de redaction numerique, en les employant comme developpeurs, chercheurs et redacteurs. Le projet soutient l'acces ouvert, la collaboration universitaire et la creation de nouveaux genres numeriques. Cependant, a mesure que le projet a evolue, il est devenu clair qu'il etait particulierement difficile d'obtenir d'une equipe d'universitaires qu'ils travaillent en collaboration hierarchisee, ou ce que nous appelons asymetrique, entre les redacteurs et les etudiants diplomes, et que cela peut mener a des problemes de finesse et d'etalement. La production d'un processus de flux de travail collaboratif et democratique nous a permis de rediger une collection robuste de guides dans des genres numeriques innovateurs. Cet article porte une attention particuliere aux problemes de la paternite des œuvres qui surgissent lors de tout projet de redaction numerique en collaboration, et discute des complexites de l'experience des etudiants diplomes a travailler au sein d'une equipe de developpement pedagogique numerique."
+  ],
+  "format": [
+    "application/pdf"
+  ],
+  "id": "50|dedup_wf_001::fb93f67c7220dc13b3e4dc7cb39aefab",
+  "instance": [
+    {
+      "collectedfrom": {
+        "key": "10|driver______::bee53aa31dc2cbb538c10c2b65fa5824"
+      },
+      "hostedby": {
+        "key": "10|doajarticles::d1c58936cca4fc19deb1329841774135"
+      },
+      "type": "Article",
+      "url": [
+        "https://www.digitalstudies.org//articles/28"
+      ]
+    },
+    {
+      "collectedfrom": {
+        "key": "10|openaire____::081b82f96300b6a6e3d282bad31cb6e2"
+      },
+      "hostedby": {
+        "key": "10|doajarticles::d1c58936cca4fc19deb1329841774135"
+      },
+      "license": "http://creativecommons.org/licenses/by/4.0",
+      "type": "Article",
+      "url": [
+        "http://dx.doi.org/10.16995/dscn.28"
+      ]
+    },
+    {
+      "collectedfrom": {
+        "key": "10|openaire____::8ac8380272269217cb09a928c8caa993"
+      },
+      "hostedby": {
+        "key": "10|doajarticles::d1c58936cca4fc19deb1329841774135"
+      },
+      "license": "cc-by",
+      "type": "Article",
+      "url": [
+        "https://doi.org/10.16995/dscn.28"
+      ]
+    },
+    {
+      "collectedfrom": {
+        "key": "10|openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+        "value": "Microsoft Academic Graph"
+      },
+      "hostedby": {
+        "key": "10|doajarticles::d1c58936cca4fc19deb1329841774135"
+      },
+      "type": "Article",
+      "url": [
+        "https://www.digitalstudies.org/articles/10.16995/dscn.28/",
+        "https://academic.microsoft.com/#/detail/2328671840"
+      ]
+    }
+  ],
+  "language": {
+    "code": "eng"
+  },
+  "maintitle": "Asymmetric Digital Collaboration and Collective Authorship: On Digital Genres and Writing Processes for 'CanLit Guides'",
+  "originalId": [
+    "oai:doaj.org/article:eebc19b7f56c4c439b316061bffd423d",
+    "10.16995/dscn.28",
+    "2328671840"
+  ]
+  "publicationdate": "2016-03-30",
+  "publisher": "Open Library of Humanities",
+  "subjects": [
+    {
+      "subject": {
+        "scheme": "keyword",
+        "value": "CanLit Guides, workflow, digital genres, digital pedagogical project, collaboration, authorship, literature and culture"
+      }
+    },
+    {
+      "subject": {
+        "scheme": "lcsh",
+        "value": "lcsh:History of scholarship and learning. The humanities"
+      }
+    },
+    {
+      "subject": {
+        "scheme": "lcsh",
+        "value": "lcsh:AZ20-999"
+      }
+    },
+    {
+      "subject": {
+        "scheme": "lcsh",
+        "value": "lcsh:Electronic computers. Computer science"
+      }
+    },
+    {
+      "subject": {
+        "scheme": "lcsh",
+        "value": "lcsh:QA75.5-76.95"
+      }
+    }
+  ]
+}
+```
+   
 ### OpenAIRE JSON file format
 
-The OpenAIRE JSON schemas for publications are available here https://zenodo.org/record/5799514#.YtAAYOxBw40.   
-In GoTriple we only consider  the following  subset of elements, which must be included in the dump produced for the import in our platform:  
+The OpenAIRE JSON schemas for publications are available here https://zenodo.org/record/5799514#.YtAAYOxBw40. The specific schema used by GoTriple is: https://zenodo.org/record/5799514/files/result_schema.json?download=1.   
+In GoTriple we only consider the following  subset of elements, which must be included in the dump produced for the import in our platform:  
 
 | Description | JSON schema | Triple data model | 
 | :---     |  :---      | :----: | 
@@ -304,16 +501,13 @@ In GoTriple we only consider  the following  subset of elements, which must be i
 | Type of the resource | instance/type | schema:additionalType |
 | URL of the landing page | instance/url (it must start with http and must not end with .pdf) | schema:mainEntityOfPage |
 | URL of the resource | instance/url (it must start with http and end with .pdf) | schema:url |
-| URL of the source (e.g. URL of a publishing platform) | we consider the elements (one suffices): <br/>originalId (it must start with http) <br/>instance/url (it must start with http) <br/>collectedfrom/key (it must start with http) <br/>instance/collectedfrom/key(it must start with http) <br/>instance/hostedby/key (it must start with http) | schema:isBasedOnURL |
+| URL of the source (e.g. URL of a publishing platform) | we consider the element: originalId (it must start with http) | schema:isBasedOnURL |
 | Contributor to the resource’s creation | contributor | schema:contributor |
 | Format of the resource | format| schema:encodingFormat |
-| Information on the source (e.g. journal issue) | we consider the elements (one suffices): <br/>originalId (it must not start with http) <br/>instance/url (it must not start with http) <br/>collectedfrom/key (it must not start with http) <br/>instance/collectedfrom/key (it must not start with http) <br/>instance/hostedby/key (it must not start with http) | schema:mentions |
+| Information on the source (e.g. journal issue) | we consider the element: collectedfrom/key (it must not start with http) | schema:mentions |
 | Temporal coverage of the resource | null | schema:temporalCoverage |
 | Spatial coverage of the resource | coverage | schema:spatialCoverage |
 
-### Sample metadata files
-
-#### OpenAIRE JSON file example
 
 
 
